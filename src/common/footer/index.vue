@@ -59,8 +59,13 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
+<<<<<<< HEAD
     border-top: 1px solid #ddd;
     background-color: #fff;
+=======
+   border-top: 1px solid #ddd;
+   background: #ffffff;
+>>>>>>> he
 }
 
 #footer>ul{

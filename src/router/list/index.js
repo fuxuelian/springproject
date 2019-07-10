@@ -3,6 +3,7 @@ export default{
     component:()=>import("views/list"),
     name:"list",
 <<<<<<< HEAD
+<<<<<<< HEAD
     meta:{
         headerFlag:false
     }
@@ -23,4 +24,10 @@ export default{
         },
     ]
 >>>>>>> zhangbaoyin
+=======
+    meta:{
+        flag:true
+    }
+
+>>>>>>> he
 }
