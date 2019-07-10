@@ -54,6 +54,7 @@ export default {
 </script>
 <style>
 #footer{
+  background-color: #fff;
     width: 100%;
     height: auto;
     position: fixed;

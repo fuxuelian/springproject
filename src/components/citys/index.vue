@@ -2,11 +2,9 @@
   <div>
     <!-- 头部开始 -->
     <div class="wrap">
-      <mt-header title="城市选择" class="header">
+      <mt-header title="multiple button" class="">
         <router-link to="/" slot="left">
-          <mt-button icon="iconfont icon-xingzuo" class="icon">
-            <i class="1111"></i>
-          </mt-button>
+          <mt-button icon="back">back</mt-button>
         </router-link>
         <mt-button icon="more" slot="right"></mt-button>
       </mt-header>
@@ -29,31 +27,18 @@
     </div>
   </div>
 </template>
-
-
-
 <script>
 export default {
-  name: "order",
-  components: {}
-};
+   name:"citys"
+}
 </script>
 <style scoped>
-body,
-html {
-  height: 100%;
+body,html{
+    height: 100%;
 }
-.warp {
-  width: 100%;
-  height: 100%;
-}
-
-.header{
-  height: 1rem;
-  background-color:#fff;
-}
-.icon{
-  font-size: .3rem;
-}
-
+    .warp{
+        width: 100%;
+        height: 100%;
+    }
 </style>
+
