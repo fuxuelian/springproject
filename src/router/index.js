@@ -9,16 +9,22 @@ import order from "./order";
 import telme from "./telme";
 import member from "./member";
 import login from "./login";
+import collect from "./collect"
 ;
 
 export default new Router({
     routes:[
+      {
+        path:"/",
+        redirect:"/home"
+      },
       home,
       list,
       mine,
       order,
       telme ,
       member,
-      login
+      login,
+      collect
     ]
 })

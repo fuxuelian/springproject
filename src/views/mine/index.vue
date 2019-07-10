@@ -133,7 +133,7 @@
               </a>
             </li>
             <li>
-              <router-link>
+              <router-link :to="url">
                 <i class="iconfont icon-jifen"></i>我的收藏<span class="ftr"
                   ><i class="iconfont icon-xiangyou"></i
                 ></span>
@@ -174,7 +174,8 @@ components:{
 },
 data(){
   return{
-    path:"/member"
+    path:"/member",
+    url:"/collect"
    
   }
   // provide(){

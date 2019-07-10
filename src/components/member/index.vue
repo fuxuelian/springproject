@@ -1,12 +1,12 @@
 <template>
-  <div>
+ 
      
-   
-      <div class="wrap">
+   <BScroll ref="bscroll">
+      <!-- <div class="wrap"> -->
       <!-- 头部开始 -->
        <Header v-if="$route.meta.headerFlag"/>
       <!-- 头部结束 -->
-          <!-- <Bsroll/> -->
+          
       <!-- 主页部分开始 -->
        
       <article class="main">
@@ -307,7 +307,7 @@
           </div>
         </section>
       </article>
-
+    
       <!-- footers  start -->
       <footer class="footer vip-footer">
         <ul class="flex">
@@ -322,12 +322,14 @@
       </footer>
 
       <!--footer  end  -->
-    </div>
-  </div>
+    <!-- </div> -->
+ 
+ 
+  </BScroll>
 </template>
 <script>
 import Header from "common/header";
-// import Bsroll from "common/Bsroll"
+// import BScroll from "common/BScroll"
 
 
 import { Swipe, SwipeItem } from "mint-ui";
@@ -358,7 +360,7 @@ export default {
 
   components: {
     Header,
-    // Bsroll
+    // BScroll
     // MemberList
   }
 };

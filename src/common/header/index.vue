@@ -4,7 +4,7 @@
       <span class="jsback"  @click="prev">
         <i class="iconfont icon-zuojiantou1"></i>
       </span>
-      <h1>超级会员</h1>
+      <h1>我的收藏</h1>
       <section class="ftr" id="navRight">
         <span class="hd-other">
           <i class="iconfont icon-tuichu"></i>
@@ -15,7 +15,7 @@
 </template>
 <script>
 export default {
-  name: "header",
+  name: "headerCom",
   data() {
     return {
      
@@ -50,10 +50,7 @@ h1 {
 }
 
 
-.header .ftr,
-.ftr {
-  /* height: 1.79rem; */
-}
+
 .ftr {
   float: right;
 }
