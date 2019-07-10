@@ -1,6 +1,11 @@
 export default{
-    path:"./home",
+    
+    path:"/home",
     component:()=>import("views/home"),
-    name:"home"
+    name:"home",
+    meta:{
+        flag:true
+    }
+
 
 }

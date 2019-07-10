@@ -3,7 +3,7 @@
     <router-view></router-view>
 
 
-    <TabBar/>
+    <TabBar v-if="$route.meta.flag"/>
   </div>
 </template>
 
