@@ -1,4 +1,5 @@
 const path =require("path")
+
 module.exports={
     devServer:{
         open:true,
@@ -6,7 +7,13 @@ module.exports={
             "/api":{
                 target:"http://m.springtour.com",
                 changeOrigin:true,
+<<<<<<< HEAD
                 pathRewrite:{"^/api":""}
+=======
+                pathRewrite:{
+                    "/api":''
+                }
+>>>>>>> zhangbaoyin
             }
         }
     },
@@ -19,7 +26,8 @@ module.exports={
                 "router":path.resolve(__dirname,"./src/router"),
                 "store":path.resolve(__dirname,"./src/store"),
                 "views":path.resolve(__dirname,"./src/views"),
-                "api":path.resolve(__dirname,"./src/api")
+                "api":path.resolve(__dirname,"./src/api"),
+                "utils":path.resolve(__dirname,"./src/utils"),
             }
             
         }

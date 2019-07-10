@@ -5,15 +5,23 @@ import store from './store';
 import "./common";
 
 import MintUI from 'mint-ui'
+<<<<<<< HEAD
 
+=======
+>>>>>>> zhangbaoyin
 import 'mint-ui/lib/style.css'
 
 Vue.use(MintUI)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> zhangbaoyin
 Vue.config.productionTip = false
 
 new Vue({
-router,
-store,
-  render: h => h(App),
-}).$mount('#app')
+    router,
+    store,
+    render: h => h(App),
+    
+  }).$mount('#app')

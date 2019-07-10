@@ -2,8 +2,7 @@
   <div id="footer">
     <ul>
       <router-link 
-       v-for="(item,index) in tablBars " :key="index" :to="item.path" tag="li"
-     >
+       v-for="(item,index) in tablBars " :key="index" :to="item.path" tag="li">
         <i v-html="item.icon" class="iconfont"></i>
         <span>{{item.title}}</span>
       </router-link>
@@ -60,7 +59,8 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
-   border-top: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
 }
 
 #footer>ul{
