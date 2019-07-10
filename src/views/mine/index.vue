@@ -2,7 +2,7 @@
     <div>
      
 
-      
+      <h2>mine</h2>
     </div>
   
 </template>
