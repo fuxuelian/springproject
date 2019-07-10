@@ -13,18 +13,6 @@
             <i class="iconfont icon-fangdajing"></i>
         </div>
     </div>
-    <!-- <div class="banner">
-      <mt-swipe :auto="4000">
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/C9/wKjFbFziCcyAVDgpAARdeaD3zsM151.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/C4/wKjFbFzZIaqALSJaAAMjKfqEtAU616.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/B7/wKjFbFzE_omAfdJGAANivr212dE477.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/BB/wKjFbFzPiuuAQtwSAALrUoie0ek755.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/AF/wKjFbFy4Qg6AH7hIAAQC30fFXAs576.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="hhtp://media.china-sss.com/img/M00/04/B2/wKjFbFy9HxeAeri4AAHFNTv-KaU896.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/A6/wKjFbFyz842AQnUjAAE0lwyKKnA644.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/A9/wKjFbFy1Nh-AWb7uAAET6e6Phks597.jpg" alt=""></mt-swipe-item>
-    </mt-swipe>
-</div> -->
    <homeBanner/>
     <div id="activity">
         <p>
@@ -37,7 +25,8 @@
             <img src="http://media.china-sss.com/img/M00/04/F1/wKjFbF0cXZKAJbPxAACXRhXl-6E290.jpg" alt="">
         </div>
     </div>
-    <div id="main">
+    <Loading v-if="loadingFalg"/>
+    <div id="main" v-if="!loadingFalg">
         <div class="prefecture">
             <h3>积分专区</h3>
             <ul class="prefecture-list">
@@ -172,11 +161,17 @@ export default {
     this.liveList = data.data.data.products;
     let databox = await getLiveBox();
     this.market = databox.data.data.products;
+    if(data){
+      this.loadingFalg=false
+    }else{
+      this.loadingFalg=true
+    }
   },
   data() {
     return {
       liveList: [],
-      market:[]
+      market:[],
+      loadingFalg:true
     };
   },
   components:{

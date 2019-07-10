@@ -1,7 +1,8 @@
 <template>
     <div>
-        <ul class="tab-list" v-for="(item,index) in homeList" :key="index">
-            <router-link to="/order-details" tag="li">
+        <Loading v-if="loadingFalg"></Loading>
+        <ul class="tab-list" v-if="!loadingFalg" >
+            <router-link to="/order-details" tag="li" v-for="(item,index) in homeList" :key="index">
                 <i class="way">{{item.productTypeName}}</i>
                 <i class="site">{{item.cityName}}出发</i>
                 <img :src="item.imgurl">
@@ -24,12 +25,17 @@ export default {
    async created(){
         let data=await getHome()
         this.homeList = data.data.data.products
-        
+        if(data){
+          this.loadingFalg=false
+        }else{
+          this.loadingFalg=true
+        }
         
     },
     data(){
       return{
-        homeList:[]
+        homeList:[],
+        loadingFalg:true
       }
     }
 };
@@ -61,6 +67,7 @@ export default {
   border-radius: 0 0 0.15rem 0;
   color: #ffffff;
   text-align: center;
+  
 }
 .site {
   position: absolute;
@@ -79,9 +86,14 @@ export default {
   margin-left: 0.2rem;
 }
 .tab-box > h3 {
-  font-size: 0.24rem;
-  margin-bottom: 0.2rem;
-}
+  font-size: 0.3rem;
+  margin-bottom: 0.6rem;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+  }
 .tab-box > span {
   height: 0.3rem;
   color: #cccccc;

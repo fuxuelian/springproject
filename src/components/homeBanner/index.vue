@@ -1,6 +1,7 @@
 <template>
 <div>
-<mt-swipe :auto="3000">
+<Loading v-if="loadingFalg"></Loading>
+<mt-swipe :auto="3000" v-if="!loadingFalg">
     <mt-swipe-item v-for="(item,index) in banners" :key="index">
         
             <img :src="item.imgurl"/>
@@ -25,13 +26,18 @@ export default {
   name: "banner",
   async created() {
     let data = await homeBanner();
+    this.banners = data.data.data.banners;   
+    if(data){
+        this.loadingFalg=false
+    }else{
+        this.loadingFalg=true
+    }
 
-    this.banners = data.data.data.banners;
-    console.log(this.banners);
   },
   data() {
     return {
-      banners: []
+      banners: [],
+      loadingFalg:true
     };
   },
   mounted() {}
@@ -41,8 +47,10 @@ export default {
 
 <style scoped>
 .mint-swipe {
-  width: 100%;
   height: 2.6rem;
 }
-
+.mint-swipe img{
+  width: 100%;
+    height: 2.6rem;
+}
 </style>

@@ -1,9 +1,7 @@
 <template>
   <div>
-    
-      <div id="box">
+      <div id="box" >
           <HomeBanner />
-          
         <div class="ipt-box">
             <a href="javascript:;"> 深圳 <i class="iconfont icon-sanjiaodown"></i></a>
             <input type="text" placeholder="搜索你想去的地方" class="ipt">
@@ -30,7 +28,7 @@
                 </li>
                 <li>
                     <img src="https://media.china-sss.com/img/M00/04/45/wKjFbVwm60WANVOWAAAY6j400vE369.png" alt="">
-                    <p>出境游</p>
+                    <p>飞机</p>
                 </li>
                 <li>
                     <img src="https://media.china-sss.com/img/M00/04/52/wKjFbVxK9FSAMbMoAAAsmkBE90c687.png" alt="">
@@ -130,6 +128,7 @@ export default {
   },
   data() {
     return {};
+
   },
   methods: {}
 };
@@ -188,6 +187,8 @@ export default {
   padding: 0.46rem 0.2rem 0.2rem 0.2rem;
   margin-bottom: 0.2rem;
   box-shadow: 0 12px #e4e2e2;
+  overflow: hidden;
+
 }
 .nav-box {
   width: 100%;
@@ -196,7 +197,6 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  overflow-x: auto;
 }
 .nav-box > li > img {
   width: 1.24rem;
@@ -208,8 +208,6 @@ export default {
   font-size: 0.24rem;
 }
 #nav > p {
-  position: relative;
-  height: 0.24rem;
   width: 100%;
   text-align: center;
 }
@@ -229,7 +227,7 @@ export default {
 .main-top {
   width: 100%;
   height: 1.76rem;
-  border: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
 }
 .main-top > img {
   width: 33.3%;
@@ -246,8 +244,13 @@ export default {
   font-size: 0.24rem;
 }
 .main-title {
-  text-overflow: ellipsis;
-  margin-bottom: 0.15rem;
+  font-size: 0.3rem;
+  margin-bottom: 0.6rem;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
 }
 .main-text > p {
   float: left;
@@ -327,6 +330,10 @@ export default {
   text-align: center;
   line-height: 0.82rem;
   color: #555555;
+}
+
+.tab{
+  padding-bottom: .8rem;
 }
 /* 商品列表 */
 .night{

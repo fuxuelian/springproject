@@ -1,21 +1,17 @@
 <template>
     <div>
-           <div id="content">
+      <Loading v-if="loadingFalg"/>
+        <div id="content" v-if="!loadingFalg">
         <!-- 头部 -->
         <div id="header">
             <a href="javascript:;" @click="handleBack()"><i class="iconfont icon-zuojiantou1"></i></a>
             <a href="javascript:;"><i class="iconfont icon-ziyuan1"></i></a>
             <h2>出境游</h2>
         </div>
-          <!-- <HomeBanner>
-              <template v-slot:detailsBanner="props">        
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide " id="banner" v-for="(item,index) in props.details" :key="index">
-                                <img :src="item" >
-                            </div>              
-                  </div>
-              </template>
-          </HomeBanner> -->
+        <div class="banner">
+          <HomeBanner>
+          </HomeBanner>
+        </div>
          <!-- 搜索地点  -->
         <div id="search">
             <div class="search-top">
@@ -138,11 +134,17 @@ export default {
 
     let num = await getlistbox()
     this.listbox = num.data.data.products
+    if(data){
+      this.loadingFalg=false
+    }else{
+      this.loadingFalg=true
+    }
   },
   data(){
       return{
       detailsList:[],
-      listbox:[]
+      listbox:[],
+      loadingFalg:true
       }
   },
   components: {
@@ -200,7 +202,10 @@ export default {
   color: #ffffff;
 }
 /* 背景图 */
-#banner img {
+.banner{
+  margin-top: .8rem;
+} 
+.banner img {
   width: 100%;
   height: 2.6rem;
   margin-top: 0.8rem;
@@ -393,11 +398,13 @@ export default {
   margin-left: 0.2rem;
 }
 .tab-box > h3 {
-  height: .72rem;
-  text-emphasis: none;
-  /* overflow: hidden; */
-  font-size: 0.24rem;
-  margin-bottom: .75rem;
+  font-size: 0.3rem;
+  margin-bottom: 0.6rem;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
 }
 .tab-box > span {
   height: 0.3rem;
