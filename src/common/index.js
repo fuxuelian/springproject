@@ -1,11 +1,16 @@
 import Vue from "vue";
+import Header from "./header";
+import BScroll from "./BScroll";
+import Loading from "./loading";
 import Footer from "./footer";
-import Header from "./header"
 
+
+Vue.component("Header",Header)
+Vue.component("BScroll",BScroll)
+Vue.component("Loading",Loading)
 Vue.component("TabBar",Footer);
 
-Vue.component("HeaderCom",Header)
-import Loading from "./loading";
-import BScroll from "./BScroll";
-Vue.component("Loading",Loading)
-Vue.component("BScroll",BScroll)
+
+
+
+

@@ -1,15 +1,21 @@
 <template>
-  <div>
+ 
      
    
-      <div class="wrap">
+      <div class="wrap" >
       <!-- 头部开始 -->
        <Header v-if="$route.meta.headerFlag"/>
       <!-- 头部结束 -->
-          <!-- <Bsroll/> -->
+          
       <!-- 主页部分开始 -->
-       
-      <article class="main">
+       <div class="box">
+        
+          <BScroll  ref="bscroll">
+           
+            <article>
+                <div class="loading" >
+                  <i class="fa fa-spinner fa-pulse"></i>
+                </div>
         <section class="vip-info vip-info-bg">
           <h2 class="h2">超级会员</h2>
           <a class="h3 js-plusList" href="javascript:;">开通立享六大权益，预计可省1280元 &gt;</a>
@@ -71,27 +77,18 @@
         <!-- 轮播图开始 -->
         <!-- 用swiper实现轮播 -->
        
-
+           
             <section class="flash-box"> 
-               <mt-swipe :auto="3000">
+               <mt-swipe :auto="3000" >
                 <mt-swipe-item  v-for="(item,index) in banners" :key="index">               
                     <a href="item.linkurl">
                       <img :src="item.imgurl"/>
                     </a>
                 </mt-swipe-item>
                 <div></div>
-              </mt-swipe>
-
-          <!-- <div v-for="(item,index) in banners" :key="index">
-            <div>
-              <a href="item.linkurl">
-                <img :src="item.imgurl" />
-              </a>
-            </div> -->
-
-            
-          <!-- </div> -->
+              </mt-swipe>         
           </section>
+         
         <!-- 轮播图结束 -->
 
         <!-- 优惠券礼包开始 -->
@@ -164,9 +161,10 @@
               <i class="iconfont icon-xiangyou"></i>
             </a>
           </div>
-          
+          <keep-alive>
           <div class="box-tab">
-            <section class="search-tab">
+            <Loading v-if="loadingFlag"/>
+            <section class="search-tab" v-if="!loadingFlag">
               <ul class="tab-nav">
                 <router-link class="on" to="/member/enjoy" tag="li">赏玩国内</router-link>
                 <router-link class="on" to="/member/leave" tag="li">畅玩出境</router-link>
@@ -175,14 +173,14 @@
               </ul>
             </section>
             <router-view/>
-           
+         
             <!-- <MemberList/> -->
             
             <!-- 会员专享优惠列表开始 -->
            
             <!-- 会员专享优惠列表结束 -->
           </div>
-
+         </keep-alive> 
           <a class="t-fb" href="#">
             开通立享
             <i class="icon-link"></i>
@@ -207,7 +205,9 @@
               />
             </a>
           </div>
+           <div class="scroll-box">
           <div class="swiper-container swiper-item">
+             
             <ul class="item-td swiper-wrapp aqy-img">
               <li v-for="(item,index) in oimg" :key="index">
                 <div class="img-outer">
@@ -220,42 +220,16 @@
                   <span class="btn">立即领取</span>
                 </div>
               </li>
-              <li>
-                <div class="img-outer">
-                  <div class="img-inner">
-                    <img
-                      class="animas"
-                      src="http://media.china-sss.com/img/M00/04/C9/wKjFbFzehd2AdKzSAAFhOup6Dew913.png"
-                      alt
-                    />
-                  </div>
-                </div>
-                <div class="txt-outer">
-                  <h2>爱奇艺月卡</h2>
-                  <span class="btn">立即领取</span>
-                </div>
-              </li>
-              <li>
-                <div class="img-outer">
-                  <div class="img-inner">
-                    <img
-                      class="animas"
-                      src="http://media.china-sss.com/img/M00/04/C9/wKjFbFzehd2AdKzSAAFhOup6Dew913.png"
-                      alt
-                    />
-                  </div>
-                </div>
-                <div class="txt-outer">
-                  <h2>爱奇艺月卡</h2>
-                  <span class="btn">立即领取</span>
-                </div>
-              </li>
+              
             </ul>
+            </div>
+            </div>
             <a class="t-fb" href="#">
               立即开通
               <i class="iconfont icon-xiangyou"></i>
             </a>
-          </div>
+          
+        
         </section>
 
         <!-- 生活特权结束 -->
@@ -306,8 +280,10 @@
             </a>
           </div>
         </section>
-      </article>
-
+         </article>
+        </BScroll>
+     
+    </div>
       <!-- footers  start -->
       <footer class="footer vip-footer">
         <ul class="flex">
@@ -323,12 +299,14 @@
 
       <!--footer  end  -->
     </div>
-  </div>
+ 
+ 
+  
 </template>
 <script>
 import Header from "common/header";
-// import Bsroll from "common/Bsroll"
-
+import BScroll from "common/BScroll"
+// import BScroll from "better-scroll"
 
 import { Swipe, SwipeItem } from "mint-ui";
 import { getVip, getAqy} from "api/vip";
@@ -336,14 +314,23 @@ import { getVip, getAqy} from "api/vip";
 
 export default {
   name: "member",
-
+  props:{
+    type:String,
+    default:"我的收藏",
+    require:true,
+    title:"我的页面"
+  },
   async created() {
     let data = await getVip();
     this.banners = data.data.data.banners;
 
     let oimg = await getAqy();
     this.oimg = oimg.data.data.banners;
-
+    if(data&&oimg){
+      this.loadingFlag=false
+    }else{
+      this.loadingFlag=true
+    }
    
 
   },
@@ -351,27 +338,54 @@ export default {
     return {
       banners: [],
       oimg: [],
+      loadingFlag:true
      
     };
   },
-
+  // mounted(){
+  //   this.scroll=new BScroll(this.$refs.bscroll)
+  //   this.scroll.hasVerticalScroll=true
+  //   console.log(this.scroll)
+  // },
 
   components: {
     Header,
-    // Bsroll
+    // BScroll
     // MemberList
   }
 };
 </script>
 <style>
+.wrap{
+  height:100%;
+}
+
+.loading{
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+.loading>i{
+font-size:.4rem;
+}
+.box{
+  height: 100%;
+  /* width:max-content; */
+  overflow: auto;
+  /* position: relative;
+  top: 0;
+  left: 0; */
+}
 .wrap .main {
-  /* margin: 0 auto; */
-  overflow-y: auto;
-  position: absolute;
+ 
+  /* overflow-y: auto; */
+  /* position: absolute;
   top: 0.9rem;
   left: 0;
-  bottom: 0;
-  height: 100%;
+  bottom: 0; */
+  /* height: 100%; */
 }
 /* 主页开始 */
 
@@ -600,13 +614,17 @@ img {
 /* 会员专享旅游结束 */
 
 /* 生活特权开始 */
-
+/* .aqy-img::-webkit-scrollbar { width: 0 !important } */
 .swiper-item {
   padding: 0.2rem 0 0 0.05rem;
   margin: 0;
   float: left;
+  width: 100%;
 }
-
+/* .scroll-box{
+  width: 100%;
+  height: 100%;
+} */
 .swiper-item .aqy-img {
   display: flex;
   width: 7rem;
@@ -615,7 +633,9 @@ img {
   margin: 0 0 0.43rem 0;
   box-sizing: border-box;
   overflow-x: auto;
+  
 }
+
 .aqy-img {
   width: 20rem;
 }

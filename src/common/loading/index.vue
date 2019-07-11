@@ -1,58 +1,133 @@
 <template>
-
-<div class="loader">
-  <p></p>
-</div>
+  <div>
+    <figure>
+      <div class="dot white"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </figure>
+  </div>
 </template>
-
-
 <script>
 export default {
-    name:'loading'
-    
-}
+  name: "loading"
+};
 </script>
-
-
 <style scoped>
-.loader {
-  width: 100px;
-  height: 101px;
-  border: 8px solid;
-  border-top-color: hsl(154,100%,31%);
-  border-left-color: hsl(216,87%,52%);
-  border-bottom-color: hsl(8,66%,50%);
-  border-right-color: hsl(42,100%,51%);
-  border-radius: 50%;
-  transform: rotate(45deg);
-  margin: 30px auto;
+body {
+  background: #222;
 }
-p {
-  display: inline-block;
-  width: 107px;
-  height: 107px;
-  /* The background is used to specify the border background */
-  background: linear-gradient(90deg, hsla(212,67%,36%,0) 0%,
-                                         hsla(207,69%,51%,0) 76%,
-                                         hsla(0,0%,100%,1) 85%,
-                                         hsla(0,0%,100%,1) 100%); /* W3C */
-  /* Background origin is the padding box by default.
-  Override to make the background cover the border as well. */
-  -moz-background-origin: border;
-  background-origin: border-box;
-  /* A transparent border determines the width */
-  border: 6px solid transparent;
-  border-radius: 50%;
-  box-shadow: inset -999px 0 0 #fff; /* The background color */
-  transform: translate(-8px, 55px);
-  animation: loading 1s linear infinite;
+figure {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 6.25em;
+  height: 6.25em;
+  animation: rotate 2.4s linear infinite;
+}
+.white {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  animation: flash 2.4s linear infinite;
+  opacity: 0;
+}
+.dot {
+  position: absolute;
+  margin: auto;
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 100%;
+  transition: all 1s ease;
+}
+.dot:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #ff4444;
+  animation: dotsY 2.4s linear infinite;
+}
+.dot:nth-child(3) {
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #ffbb33;
+  animation: dotsX 2.4s linear infinite;
+}
+.dot:nth-child(4) {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #99cc00;
+  animation: dotsY 2.4s linear infinite;
+}
+.dot:nth-child(5) {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #33b5e5;
+  animation: dotsX 2.4s linear infinite;
 }
 
-@keyframes loading {
-    0% { transform: translate(-9px, -25px) rotate(0deg); }
-  100% { transform: translate(-9px, -25px) rotate(360deg); }
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    width: 6.25em;
+    height: 6.25em;
+  }
+  66% {
+    width: 2.4em;
+    height: 2.4em;
+  }
+  100% {
+    transform: rotate(360deg);
+    width: 6.25em;
+    height: 6.25em;
+  }
 }
 
+@keyframes dotsY {
+  66% {
+    opacity: 0.1;
+    width: 2.4em;
+  }
+  77% {
+    opacity: 1;
+    width: 0;
+  }
+}
+@keyframes dotsX {
+  66% {
+    opacity: 0.1;
+    height: 2.4em;
+  }
+  77% {
+    opacity: 1;
+    height: 0;
+  }
+}
 
-
+@keyframes flash {
+  33% {
+    opacity: 0;
+    border-radius: 0%;
+  }
+  55% {
+    opacity: 0.6;
+    border-radius: 100%;
+  }
+  66% {
+    opacity: 0;
+  }
+}
 </style>
+
+

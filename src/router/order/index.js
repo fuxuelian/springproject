@@ -3,7 +3,7 @@ export default{
     component:()=>import("views/order"),
     name:"order",
     meta:{
-        headerFlag:false,
-
+        flag:true
     }
+
 }

@@ -108,7 +108,7 @@
 import {shuffling} from "api/destination";
 import { Swipe, SwipeItem } from 'mint-ui';
 export default {
-    name:"order",
+    name:"order" ,
     components:{
         // Shuffling,
         // Remark
@@ -119,9 +119,6 @@ export default {
         }
     },
    
-
-
-
     async created() {
         let data = await shuffling()
         console.log(data.data.data.banners);
@@ -132,9 +129,10 @@ export default {
             banners:[]
         }
     },
+
+
+
 }
-
-
 </script>
 <style scoped>
    .header{

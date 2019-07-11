@@ -7,9 +7,7 @@ module.exports={
             "/api":{
                 target:"http://m.springtour.com",
                 changeOrigin:true,
-                pathRewrite:{
-                    "/api":''
-                }
+                pathRewrite:{"^/api":""}                 
             }
         }
     },
@@ -24,6 +22,7 @@ module.exports={
                 "utils":path.resolve(__dirname,"./src/utils"),
                 "views":path.resolve(__dirname,"./src/views"),
                 "api":path.resolve(__dirname,"./src/api"),
+               
             }
             
         }

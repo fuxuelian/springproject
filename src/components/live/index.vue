@@ -16,6 +16,7 @@
             <i class="iconfont icon-fangdajing"></i>
         </div>
     </div>
+   
    <homeBanner/>
 
     <div id="activity">
