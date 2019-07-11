@@ -2,12 +2,11 @@ export default{
     path:"/list",
     component:()=>import("views/list"),
     name:"list",
-<<<<<<< HEAD
-<<<<<<< HEAD
     meta:{
-        headerFlag:false
-    }
-=======
+        headerFlag:false,
+        flag:true
+    },
+
     redirect:"/list/bottomList",
     children:[
         {
@@ -23,11 +22,4 @@ export default{
 
         },
     ]
->>>>>>> zhangbaoyin
-=======
-    meta:{
-        flag:true
-    }
-
->>>>>>> he
 }

@@ -13,18 +13,7 @@
             <i class="iconfont icon-fangdajing"></i>
         </div>
     </div>
-    <!-- <div class="banner">
-      <mt-swipe :auto="4000">
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/C9/wKjFbFziCcyAVDgpAARdeaD3zsM151.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/C4/wKjFbFzZIaqALSJaAAMjKfqEtAU616.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/B7/wKjFbFzE_omAfdJGAANivr212dE477.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/BB/wKjFbFzPiuuAQtwSAALrUoie0ek755.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/AF/wKjFbFy4Qg6AH7hIAAQC30fFXAs576.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="hhtp://media.china-sss.com/img/M00/04/B2/wKjFbFy9HxeAeri4AAHFNTv-KaU896.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/A6/wKjFbFyz842AQnUjAAE0lwyKKnA644.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="http://media.china-sss.com/img/M00/04/A9/wKjFbFy1Nh-AWb7uAAET6e6Phks597.jpg" alt=""></mt-swipe-item>
-    </mt-swipe>
-</div> -->
+   
    <homeBanner/>
     <div id="activity">
         <p>

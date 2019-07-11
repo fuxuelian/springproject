@@ -7,17 +7,7 @@ module.exports={
             "/api":{
                 target:"http://m.springtour.com",
                 changeOrigin:true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-                pathRewrite:{"^/api":""}
-=======
-                pathRewrite:{
-                    "/api":''
-                }
->>>>>>> zhangbaoyin
-=======
-                pathRewrite:{"^/api":""}
->>>>>>> he
+                pathRewrite:{"^/api":""}                 
             }
         }
     },
@@ -29,13 +19,10 @@ module.exports={
                 "components":path.resolve(__dirname,"./src/components"),
                 "router":path.resolve(__dirname,"./src/router"),
                 "store":path.resolve(__dirname,"./src/store"),
-<<<<<<< HEAD
-=======
                 "utils":path.resolve(__dirname,"./src/utils"),
->>>>>>> he
                 "views":path.resolve(__dirname,"./src/views"),
                 "api":path.resolve(__dirname,"./src/api"),
-                "utils":path.resolve(__dirname,"./src/utils"),
+               
             }
             
         }

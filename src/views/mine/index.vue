@@ -160,16 +160,9 @@
         <!-- 头部结束 -->
        
       </article>
-   </BScroll>    
+     </BScroll>    
+     </div>
     </div>
-
-<<<<<<< HEAD
-   
-=======
-      <h2>mine</h2>
->>>>>>> dev
-    </div>
-  
 </template>
 <script>
 import Register from "components/register"

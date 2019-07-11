@@ -7,12 +7,14 @@ import list from "./list";
 import mine from "./mine";
 import order from "./order";
 import telme from "./telme";
-<<<<<<< HEAD
 import member from "./member";
 import login from "./login";
 import collect from "./collect";
 import empty from "./empty"
-
+import details from "./details";
+import night from "./night";
+import orderDetails from "./order-details";
+import live from "./live";
 
 export default new Router({
     routes:[
@@ -28,28 +30,11 @@ export default new Router({
       member,
       login,
       collect,
-      empty
+      empty,
+      details,
+      orderDetails,
+      night,
+      live
     ]
 })
-=======
-import details from "./details";
-import night from "./night";
-import orderDetails from "./order-details";
-import live from "./live";
-export default new Router({
-  routes: [{
-      path: '/',
-      redirect: "/home"
-    },
-    home,
-    list,
-    mine,
-    order,
-    telme,
-    details,
-    orderDetails,
-    night,
-    live
-  ]
-})
->>>>>>> he
+

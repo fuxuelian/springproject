@@ -1,21 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
-    <router-view></router-view>
-
-    <h2>home</h2>
-  </div>
-</template>
-<script>
-export default {
-  name: "home",
-
-  data() {
-    return {
-
-
-    };
-=======
     
       <div id="box">
           <HomeBanner />
@@ -146,17 +130,11 @@ export default {
   },
   data() {
     return {};
->>>>>>> he
   },
   methods: {}
 };
 </script>
 <style scoped>
-<<<<<<< HEAD
-
-
-
-=======
 #box {
   height: 100%;
   position: relative;
@@ -358,7 +336,6 @@ export default {
     right: 0;
     bottom: 20%;
 }
->>>>>>> he
 </style>
 
 
