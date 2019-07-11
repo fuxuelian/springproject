@@ -26,7 +26,6 @@ if(res.status==200){
     return Promise.reject(err);
 })
 
-
 export default (method,url,data={})=>{
     if(method=="get"){
       return http.get(url,{
@@ -34,6 +33,5 @@ export default (method,url,data={})=>{
       })
     }else if(method=="post"){
         return http.post(url,data);
-
     }
 }

@@ -1,9 +1,11 @@
 <template>
-  <div>
-    
-      <div id="box">
+
+    <BScroll>
+       
+      
+      <!-- <template> -->
+      <div id="box" >
           <HomeBanner />
-          
         <div class="ipt-box">
             <a href="javascript:;"> 深圳 <i class="iconfont icon-sanjiaodown"></i></a>
             <input type="text" placeholder="搜索你想去的地方" class="ipt">
@@ -30,7 +32,7 @@
                 </li>
                 <li>
                     <img src="https://media.china-sss.com/img/M00/04/45/wKjFbVwm60WANVOWAAAY6j400vE369.png" alt="">
-                    <p>出境游</p>
+                    <p>飞机</p>
                 </li>
                 <li>
                     <img src="https://media.china-sss.com/img/M00/04/52/wKjFbVxK9FSAMbMoAAAsmkBE90c687.png" alt="">
@@ -105,42 +107,49 @@
                     <li><a href="javascript:;">品质出境</a></li>
                     <li><a href="javascript:;">品质出境</a></li>
                 </ul>
-                <div class="tab">
+                
                 <HomeBody></HomeBody>
-                </div>
-            </div>
-    
-            <router-link src="http://media.china-sss.com/img/M00/00/0A/wKjFbFpmvGSAQ9FSAABpLtCfBRA957.png" class="night" to="/night" tag="img">
-            </router-link>
-          
-
+                
+            </div>          
         </div>
       </div>
-  </div>
+     
+                  <router-link src="http://media.china-sss.com/img/M00/00/0A/wKjFbFpmvGSAQ9FSAABpLtCfBRA957.png" class="night" to="/night" tag="img">
+            </router-link>
+
+    </BScroll>
+   
+
+   
 </template>
 <script>
-import HomeBanner from "components/homeBanner"
-import HomeBody from "components/homeBody"
+// import BScroll from "better-scroll";
+
+import HomeBanner from "components/homeBanner";
+import HomeBody from "components/homeBody";
 
 export default {
   name: "home",
-  components:{
-      HomeBanner,
-      HomeBody
+  components: {
+    HomeBanner,
+    HomeBody
+    // BScroll
   },
   data() {
     return {};
   },
   methods: {}
+  // mounted(){
+  //   console.log(this.$refs.bscroll)
+  //   // this.scroll=new scroll(this.$refs.bscroll)
+  // }
 };
 </script>
 <style scoped>
 #box {
-  height: 100%;
   position: relative;
   box-sizing: border-box;
 }
-
 
 .ipt-box {
   position: absolute;
@@ -188,6 +197,7 @@ export default {
   padding: 0.46rem 0.2rem 0.2rem 0.2rem;
   margin-bottom: 0.2rem;
   box-shadow: 0 12px #e4e2e2;
+  overflow: hidden;
 }
 .nav-box {
   width: 100%;
@@ -196,7 +206,6 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  overflow-x: auto;
 }
 .nav-box > li > img {
   width: 1.24rem;
@@ -208,8 +217,6 @@ export default {
   font-size: 0.24rem;
 }
 #nav > p {
-  position: relative;
-  height: 0.24rem;
   width: 100%;
   text-align: center;
 }
@@ -229,7 +236,7 @@ export default {
 .main-top {
   width: 100%;
   height: 1.76rem;
-  border: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
 }
 .main-top > img {
   width: 33.3%;
@@ -246,13 +253,18 @@ export default {
   font-size: 0.24rem;
 }
 .main-title {
+  font-size: 0.3rem;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 0.15rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .main-text > p {
   float: left;
   color: red;
-  margin-right: .8rem;
+  margin-right: 0.8rem;
 }
 .main-text > p > em {
   font-size: 0.42rem;
@@ -313,11 +325,11 @@ export default {
 
 /* 商品 */
 .main-nav {
-  height: 0.82rem;
 }
 .main-nav > ul {
   height: 0.82rem;
   width: 7.5rem;
+  margin-top: 0.28rem;
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid #eeeeee;
@@ -328,13 +340,12 @@ export default {
   line-height: 0.82rem;
   color: #555555;
 }
+
 /* 商品列表 */
-.night{
-    width: 17%;
-    height: 10%;
-    position: fixed;
-    right: 0;
-    bottom: 20%;
+.night {
+  position: fixed;
+  right: 0;
+  bottom: 2rem;
 }
 </style>
 

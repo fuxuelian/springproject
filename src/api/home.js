@@ -9,3 +9,5 @@ export const getlistbox = ()=>http("get","/api/m/home/queryContent?cityId=211&po
 export const getNight = ()=>http("get","/api/site/wednesday/queryproduct?id=77&springsign=2D8786A05AFD8FB106309631521A7A233D6724BA")
 
 export const homeBanner = ()=>http("get","/api/m/home/queryContent?cityId=985&positionId=3605&t=201907090950&springsign=93661B89831DD612628DDA929A077E5ED86562A9")
+export const liveDivision = ()=>http("get","/api/m/queryContentForShop?cityId=211&positionId=3928&t=0&springsign=416C7DA08C5EFC9C711CEF19BD1C08703C718D87")
+ 

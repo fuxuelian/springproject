@@ -1,11 +1,12 @@
 <template>
     <div>
-   <div id="content">
+    <Loading v-if="loadingFalg"/>
+   <div id="content" v-if="!loadingFalg">
         <header id="header">
             <p>规则</p>
             <img src="https://media.china-sss.com/img/M00/04/D3/wKjFbFzuTJ-ANJzCAAHBlPxPY7k191.png"   alt="">
         </header>
-        <main id="main">
+        <main id="main" >
             <div class="main-top">
                 <h2>需三人助力</h2>
                 <p>解锁夜市专享</p> 
@@ -21,14 +22,17 @@
                 </div>
             </div>
             <div class="main-nav">
+                
                 <router-link to="/night/nightLeft" tag="span">
                     <p>上海</p>                    
-                </router-link>
+                    </router-link>                     
                 <router-link to="/night/nightRight" tag="span">
                     <p>宁波杭州</p>
-                 </router-link>
+                 </router-link>            
             </div>
-                <router-view/>>
+            <keep-alive>
+                <router-view/>
+            </keep-alive>
         </main>
    </div>
 
@@ -41,14 +45,18 @@ export default {
     name:"night",
     async created(){
         let data = await getNight()
-        this.nightList = data[this.num].data.masterProductList        
-    
+        this.nightList = data[0].data.masterProductList        
+        if(data){
+            this.loadingFalg=false
+        }else{
+            this.loadingFalg=true
+        }
     },
     
     data(){
         return{
             nightList:[],
-            num:0
+            loadingFalg:true
         }
     },
     methods:{

@@ -9,4 +9,8 @@ Vue.component("Header",Header)
 Vue.component("BScroll",BScroll)
 Vue.component("Loading",Loading)
 Vue.component("TabBar",Footer);
-Vue.component("HeaderCom",Header)
+
+
+
+
+

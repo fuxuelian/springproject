@@ -26,49 +26,15 @@
             <img src="http://media.china-sss.com/img/M00/04/F1/wKjFbF0cXZKAJbPxAACXRhXl-6E290.jpg" alt="">
         </div>
     </div>
-    <div id="main">
+    <Loading v-if="loadingFalg"/>
+    <div id="main" v-if="!loadingFalg">
         <div class="prefecture">
             <h3>积分专区</h3>
             <ul class="prefecture-list">
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/EB/wKjFbF0VdwiAUsZQAAHsOKt-1yQ144.jpg" alt="">
-                    <p>柒日原叶无叶茶体验装</p>
-                    <span><em>200</em>积分</span>
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/EB/wKjFbF0VdwiAUsZQAAHsOKt-1yQ144.jpg" alt="">
-                    <p>柒日原叶无叶茶体验装</p>
-                    <span><em>200</em>积分</span>
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/EB/wKjFbF0VdwiAUsZQAAHsOKt-1yQ144.jpg" alt="">
-                    <p>柒日原叶无叶茶体验装</p>
-                    <span><em>200</em>积分</span>
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/EB/wKjFbF0VdwiAUsZQAAHsOKt-1yQ144.jpg" alt="">
-                    <p>柒日原叶无叶茶体验装</p>
-                    <span><em>200</em>积分</span>
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/EB/wKjFbF0VdwiAUsZQAAHsOKt-1yQ144.jpg" alt="">
-                    <p>柒日原叶无叶茶体验装</p>
-                    <span><em>200</em>积分</span>
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/EB/wKjFbF0VdwiAUsZQAAHsOKt-1yQ144.jpg" alt="">
-                    <p>柒日原叶无叶茶体验装</p>
-                    <span><em>200</em>积分</span>
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/EB/wKjFbF0VdwiAUsZQAAHsOKt-1yQ144.jpg" alt="">
-                    <p>柒日原叶无叶茶体验装</p>
-                    <span><em>200</em>积分</span>
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/EB/wKjFbF0VdwiAUsZQAAHsOKt-1yQ144.jpg" alt="">
-                    <p>柒日原叶无叶茶体验装</p>
-                    <span><em>200</em>积分</span>
+                <li v-for="(item,index) in Division" :key="index">
+                    <img :src="item.imgurl">
+                    <p>{{item.productName}}</p>
+                    <span><em>{{item.price}}</em>积分</span>
                 </li>
             </ul>
         </div>
@@ -138,10 +104,8 @@
                       </li>
                   </ul>
             </div>
-
-            </div>
         </div>
-
+            </div>
     </div>
     </div>
 
@@ -153,7 +117,10 @@
 <script>
 import { getLive } from "api/home";
 import { getLiveBox } from "api/home";
-import homeBanner from "components/homeBanner"
+import { liveDivision } from "api/home";
+import BScroll from "better-scroll";
+
+import homeBanner from "components/homeBanner";
 export default {
   name: "live",
   async created() {
@@ -161,33 +128,47 @@ export default {
     this.liveList = data.data.data.products;
     let databox = await getLiveBox();
     this.market = databox.data.data.products;
+
+    let num = await liveDivision();
+    this.Division = num.data.data.products;
+    if (data) {
+      this.loadingFalg = false;
+    } else {
+      this.loadingFalg = true;
+    }
   },
   data() {
     return {
       liveList: [],
-      market:[]
+      market: [],
+      Division: [],
+      loadingFalg: true
     };
   },
-  components:{
+  components: {
     homeBanner
   },
-  methods:{
-    handleBack(){
-      this.$router.back()
+  methods: {
+    handleBack() {
+      this.$router.back();
     }
-  }
+  },
 };
 </script>
 
 
 <style scoped>
-
 #content {
   height: 100%;
   position: relative;
   box-sizing: border-box;
 }
-
+.box {
+  height: 40rem;
+}
+.box2 {
+  height: 50rem;
+}
 /* 头部 */
 #header {
   width: 100%;
@@ -228,12 +209,11 @@ export default {
   width: 100%;
   height: 2.56rem;
 }
-.banner{
+.banner {
   height: 2.56rem;
 }
 /* 搜索 */
 #search {
-  margin-top: 0.8rem;
   padding: 0.2rem;
   position: relative;
 }
@@ -373,7 +353,7 @@ export default {
 .popularity-list > li > p {
   margin-top: 0.1rem;
   font-size: 0.28rem;
-  height: .72rem;
+  height: 0.72rem;
 }
 .popularity-list > li > span {
   color: #ff6666;
@@ -471,30 +451,29 @@ export default {
   margin: 0.28rem 0;
 }
 
-.market-top>h3{
-    font-weight: 600;
-    font-size: .3rem;
+.market-top > h3 {
+  font-weight: 600;
+  font-size: 0.3rem;
 }
-.market-top>p{
-    color: #999999;
+.market-top > p {
+  color: #999999;
 }
-.market-list{
-    height: .8rem;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid #eeeeee;
+.market-list {
+  height: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #eeeeee;
 }
-.market-list>li{
-    text-align: center;
-    font-size: .28rem;
-    line-height: .8rem;
-    color: #666666;
-    font-weight: 400;
+.market-list > li {
+  text-align: center;
+  font-size: 0.28rem;
+  line-height: 0.8rem;
+  color: #666666;
+  font-weight: 400;
 }
-.market-box-top{
-  margin-top: .1rem;
+.market-box-top {
+  margin-top: 0.1rem;
 }
-
 
 .market-box-list {
   display: flex;
@@ -535,5 +514,4 @@ export default {
   text-align: center;
   line-height: 0.38rem;
 }
-
 </style>

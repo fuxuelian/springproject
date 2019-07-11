@@ -2,11 +2,6 @@ export default{
     path:"/list",
     component:()=>import("views/list"),
     name:"list",
-    meta:{
-        headerFlag:false,
-        flag:true
-    },
-
     redirect:"/list/bottomList",
     children:[
         {
@@ -21,5 +16,11 @@ export default{
             name:"bottomList"
 
         },
-    ]
+    ],
+
+    meta:{
+        flag:true
+    }
+
+
 }
