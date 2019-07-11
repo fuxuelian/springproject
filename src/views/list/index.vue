@@ -61,14 +61,15 @@ export default {
     BottomList
   },
   mounted() {
+    this.$refs.bscroll.scrollstart((flag)=>{
+      this.loadingFlag = flag
+    })
+    this.$refs.bscroll.scrollEnd((flag)=>{
+      this.loadingFlag = flag
 
-        // this.scroll = new BScroll(this.$refs.orderBody);
-        // console.log(this.$refs.bscroll.scroll);
-        
-        this.$refs.bscroll.scroll.on("scroll",({x,y})=>{
-          console.log(y)
-          
-        })
+    })
+
+
     }
 };
 </script>
