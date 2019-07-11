@@ -1,10 +1,12 @@
 <template>
     <div>
+        
      <div class="wrap">
+       <BScroll>
       <article class="main">
         <!-- 头部的背景 -->
           <Register/>
-       
+     
 
           <!-- 会员开始 -->
         <section class="user-order">
@@ -72,16 +74,15 @@
                 ></span>
               </a>
             </li>
-
             <li>
-              <a href="javascript:;" data-role="ga" data-done="我的历史订单">
+           <router-link :to="empty" >
+             
                 <i class="iconfont icon-lianjie"></i>我的历史订单<span
                   class="ftr"
                   ><i class="iconfont icon-xiangyou"></i
                 ></span>
-              </a>
-            </li>
-
+            </router-link>
+          </li>
             <li>
               <a href="javascript:;" data-role="ga" data-done="酒店订单">
                 <i class="iconfont icon-lianjie"></i>酒店订单<span class="ftr"
@@ -157,10 +158,12 @@
         </section>
 
         <!-- 头部结束 -->
+       
       </article>
+   </BScroll>    
     </div>
 
-      
+   
     </div>
   
 </template>
@@ -175,7 +178,8 @@ components:{
 data(){
   return{
     path:"/member",
-    url:"/collect"
+    url:"/collect",
+    empty:"/empty"
    
   }
   // provide(){

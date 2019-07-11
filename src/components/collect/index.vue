@@ -60,13 +60,18 @@
     </div>
 </template>
 <script>
-import { getCollect } from "api/collect";
+import { getCollect,getPic } from "api/collect";
+
 export default {
   name: "collect",
   async created() {
     let data = await getCollect();
     this.collect = data.data.data.products;
-    console.log(this.collect);
+    // console.log(this.collect);
+
+
+    let pic=await getPic()
+    console.log(pic)
   },
   data() {
     return {

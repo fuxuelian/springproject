@@ -9,8 +9,9 @@ import order from "./order";
 import telme from "./telme";
 import member from "./member";
 import login from "./login";
-import collect from "./collect"
-;
+import collect from "./collect";
+import empty from "./empty"
+
 
 export default new Router({
     routes:[
@@ -25,6 +26,7 @@ export default new Router({
       telme ,
       member,
       login,
-      collect
+      collect,
+      empty
     ]
 })

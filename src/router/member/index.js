@@ -2,6 +2,7 @@ export default {
   path: "/member",
   component: () => import("components/member"),
   name: "member",
+  redirect: 'member/enjoy' ,   
   meta: {
     title: "会员",
     headerFlag: true
@@ -11,7 +12,7 @@ export default {
         path: "enjoy",
         component: () => import("components/enjoy"),
         name: "enjoy",
-         // redirect: '/enjoy'     
+         
         meta: {
          
           headerFlag: true
