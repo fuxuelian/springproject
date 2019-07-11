@@ -2,10 +2,8 @@
 <div>
 <Loading v-if="loadingFalg"></Loading>
 <mt-swipe :auto="3000" v-if="!loadingFalg">
-    <mt-swipe-item v-for="(item,index) in banners" :key="index">
-        
-            <img :src="item.imgurl"/>
-        
+    <mt-swipe-item v-for="(item,index) in banners" :key="index">   
+            <img :src="item.imgurl"/>     
     </mt-swipe-item>
     
 </mt-swipe>

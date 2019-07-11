@@ -1,8 +1,7 @@
 <template>
 <div>
+ 
         <Loading v-if="loadingFalg"/>
-
-
             <div class="main-list">
                 <ul v-for="(item,index) in nightRight" :key="index">
                     <li>
@@ -20,7 +19,9 @@
                         </div>
                     </li>
                 </ul>
+                
     </div>
+  
     </div>
 </template>
 

@@ -151,11 +151,23 @@
 
 
 <script>
+import { orderDetails } from "api/home";
 export default {
     name:'order-details',
+    props:["id"],
     methods:{
         hanndleBack(){
             this.$router.back()
+        }
+    },
+  async created() {
+        
+        // this.listList=data.data.data.ProductInfoDtoList
+        // console.log(this.orderList);
+        
+    },
+    data(){
+        return{
         }
     }
     
@@ -236,7 +248,7 @@ export default {
     height: .56rem;
     font-size: .27rem;
 }
-#banner .icon-duotu{
+#banner .iconDuotu{
     font-size: .4rem;
 }
 

@@ -22,14 +22,17 @@
                 </div>
             </div>
             <div class="main-nav">
+                
                 <router-link to="/night/nightLeft" tag="span">
                     <p>上海</p>                    
-                </router-link>
+                    </router-link>                     
                 <router-link to="/night/nightRight" tag="span">
                     <p>宁波杭州</p>
-                 </router-link>
+                 </router-link>            
             </div>
-                <router-view/>>
+            <keep-alive>
+                <router-view/>
+            </keep-alive>
         </main>
    </div>
 

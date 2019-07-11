@@ -1,5 +1,9 @@
 <template>
-  <div>
+  
+    <BScroll>
+       
+      
+      <!-- <template> -->
       <div id="box" >
           <HomeBanner />
         <div class="ipt-box">
@@ -103,20 +107,24 @@
                     <li><a href="javascript:;">品质出境</a></li>
                     <li><a href="javascript:;">品质出境</a></li>
                 </ul>
-                <div class="tab">
+                
                 <HomeBody></HomeBody>
-                </div>
-            </div>
-    
-            <router-link src="http://media.china-sss.com/img/M00/00/0A/wKjFbFpmvGSAQ9FSAABpLtCfBRA957.png" class="night" to="/night" tag="img">
-            </router-link>
-          
-
+                
+            </div>          
         </div>
       </div>
-  </div>
+     
+                  <router-link src="http://media.china-sss.com/img/M00/00/0A/wKjFbFpmvGSAQ9FSAABpLtCfBRA957.png" class="night" to="/night" tag="img">
+            </router-link>
+
+    </BScroll>
+   
+
+   
 </template>
 <script>
+// import BScroll from "better-scroll";
+
 import HomeBanner from "components/homeBanner"
 import HomeBody from "components/homeBody"
 
@@ -124,18 +132,23 @@ export default {
   name: "home",
   components:{
       HomeBanner,
-      HomeBody
+      HomeBody,
+      // BScroll
+
   },
   data() {
     return {};
 
   },
-  methods: {}
+  methods: {},
+  // mounted(){
+  //   console.log(this.$refs.bscroll)
+  //   // this.scroll=new scroll(this.$refs.bscroll)
+  // }
 };
 </script>
 <style scoped>
 #box {
-  height: 100%;
   position: relative;
   box-sizing: border-box;
 }
@@ -316,11 +329,11 @@ export default {
 
 /* 商品 */
 .main-nav {
-  height: 0.82rem;
 }
 .main-nav > ul {
   height: 0.82rem;
   width: 7.5rem;
+  margin-top: .28rem;
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid #eeeeee;
@@ -332,16 +345,11 @@ export default {
   color: #555555;
 }
 
-.tab{
-  padding-bottom: .8rem;
-}
 /* 商品列表 */
 .night{
-    width: 17%;
-    height: 10%;
     position: fixed;
     right: 0;
-    bottom: 20%;
+    bottom: 2rem;
 }
 </style>
 
