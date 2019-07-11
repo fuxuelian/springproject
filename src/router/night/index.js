@@ -7,12 +7,13 @@ export default{
         {
             path:'nightLeft',
             component:()=>import("components/night/nightLeft"),
-            name:"nightLeft"
+            name:"nightLeft",
         },
         {
             path:'nightRight',
             component:()=>import("components/night/nightRight"),
-            name:"nightRight"
+            name:"nightRight",
+
         }
 
     ],

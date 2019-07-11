@@ -1,5 +1,7 @@
 <template>
-
+<div>
+ 
+        <Loading v-if="loadingFalg"/>
             <div class="main-list">
                 <ul v-for="(item,index) in nightRight" :key="index">
                     <li>
@@ -17,6 +19,9 @@
                         </div>
                     </li>
                 </ul>
+                
+    </div>
+  
     </div>
 </template>
 
@@ -29,12 +34,17 @@ export default {
     async created(){
         let data = await getNight()
         this.nightRight = data[1].data.masterProductList
-    
+    if (data) {
+      this.loadingFalg = false;
+    } else {
+      this.loadingFalg = true;
+    }
     },
     
     data(){
         return{
             nightRight:[],
+            loadingFalg:true
         }
     }
 }

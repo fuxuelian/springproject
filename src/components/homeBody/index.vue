@@ -1,7 +1,9 @@
 <template>
+<div class="tab">
     <div>
-        <ul class="tab-list" v-for="(item,index) in homeList" :key="index">
-            <router-link to="/order-details" tag="li">
+        <Loading v-if="loadingFalg"></Loading>
+        <!-- <ul class="tab-list" v-if="!loadingFalg" >
+            <router-link to="/order-details" tag="li" v-for="(item,index) in homeList" :key="index">
                 <i class="way">{{item.productTypeName}}</i>
                 <i class="site">{{item.cityName}}出发</i>
                 <img :src="item.imgurl">
@@ -11,8 +13,21 @@
                     <p>¥<em>{{item.price}}</em>起 </p>
                 </div>
             </router-link>
+        </ul> -->
+       <ul class="tab-list" v-if="!loadingFalg" >
+            <v-touch @tap="handleDetail(item.productId)"  tag="li" v-for="(item,index) in homeList" :key="index">
+                <i class="way">{{item.productTypeName}}</i>
+                <i class="site">{{item.cityName}}出发</i>
+                <img :src="item.imgurl">
+                <div class="tab-box">
+                    <h3>{{item.productName}}</h3>
+                    <span>班期：{{item.scheduleDateList}}</span>
+                    <p>¥<em>{{item.price}}</em>起 </p>
+                </div>
+            </v-touch>
         </ul>
 
+      </div>
     </div>
 </template>
 
@@ -25,11 +40,22 @@ export default {
         let data=await getHome()
         this.homeList = data.data.data.products
         
+        if(data){
+          this.loadingFalg=false
+        }else{
+          this.loadingFalg=true
+        }
         
     },
     data(){
       return{
-        homeList:[]
+        homeList:[],
+        loadingFalg:true,
+      }
+    },
+    methods:{
+      handleDetail(id){
+        this.$router.push({name:'orderDetails',params:{id}})
       }
     }
 };
@@ -37,6 +63,9 @@ export default {
 
 
 <style scoped>
+.tab{
+  padding-bottom: .8rem;
+}
 
 .tab-list {
   padding: 0.2rem;
@@ -61,6 +90,7 @@ export default {
   border-radius: 0 0 0.15rem 0;
   color: #ffffff;
   text-align: center;
+  
 }
 .site {
   position: absolute;
@@ -79,9 +109,14 @@ export default {
   margin-left: 0.2rem;
 }
 .tab-box > h3 {
-  font-size: 0.24rem;
-  margin-bottom: 0.2rem;
-}
+  font-size: 0.3rem;
+  margin-bottom: 0.6rem;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+  }
 .tab-box > span {
   height: 0.3rem;
   color: #cccccc;
