@@ -5,7 +5,7 @@
     <BScroll ref="bscroll">
       <template>
           <div class="main" ref="listBody">
-          
+          <!-- <div class="loading"><i class="fa fa-spinner fa-pulse"></i></div> -->
           <div>
             <div class="loading"><i class="fa fa-spinner fa-pulse"></i></div>
           <div class="search">
@@ -94,7 +94,7 @@ export default {
   bottom: 1rem;
   overflow-y: auto;
   padding-bottom: 2rem;
-  background-color: #f2f3f7;
+  
   padding-top: .8rem;
 }
 
@@ -143,6 +143,9 @@ export default {
 
 /* 左侧导航 */
 
+.hot-city{
+  background-color: #f2f3f7;
+}
 
 
 </style>

@@ -8,8 +8,9 @@
     </div>
 
     <!-- 内容 -->
-    <div class="main">
+    <div class="main"  ref="listBody">
         <!-- 轮播图 -->
+<div>
         <banner class="banner">
             <mt-swipe :auto="2000">
                 <mt-swipe-item v-for="(item,index) in banners" :key="index">
@@ -213,7 +214,7 @@
                 </div>
             </div> -->
         </div>
-
+</div>
     </div>
 
     </div>
@@ -222,6 +223,7 @@
 <script>
 import {ticket} from "api/destination";
 import Freedom from "components/freedom";
+import BScroll from "better-scroll";
 export default {
     name:"japen",
     async created() {
@@ -243,7 +245,11 @@ export default {
             this.$router.back()
         }
     },
+    mounted() {
 
+        this.scroll = new BScroll(this.$refs.orderBody);
+        console.log(this.scroll);
+    }
 
 }
 </script>
