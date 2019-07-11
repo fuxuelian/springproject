@@ -6,6 +6,9 @@
             <a href="javascript:;"><i class="iconfont icon-ziyuan1"></i></a>
             <h2>+ 生活</h2>
         </div>
+               
+        <BScroll>
+<div>
     <div id="search">
         <div class="search-top">
             <a href="javascript:;">深圳<i class="iconfont icon-xjt"></i></a>
@@ -14,6 +17,7 @@
         </div>
     </div>
    <homeBanner/>
+
     <div id="activity">
         <p>
             <i class="iconfont icon-laba"></i>
@@ -26,6 +30,7 @@
         </div>
     </div>
     <Loading v-if="loadingFalg"/>
+
     <div id="main" v-if="!loadingFalg">
         <div class="prefecture">
             <h3>积分专区</h3>
@@ -107,7 +112,11 @@
             </div>
     </div>
     </div>
+</BScroll>
+      </div>
+    
 
+   
 
 </template>
 
@@ -117,7 +126,6 @@
 import { getLive } from "api/home";
 import { getLiveBox } from "api/home";
 import { liveDivision } from "api/home";
-import BScroll from "better-scroll";
 
 import homeBanner from "components/homeBanner";
 export default {
@@ -151,7 +159,7 @@ export default {
     handleBack() {
       this.$router.back();
     }
-  },
+  }
 };
 </script>
 
@@ -214,6 +222,7 @@ export default {
 /* 搜索 */
 #search {
   padding: 0.2rem;
+  margin-top: .82rem;
   position: relative;
 }
 .search-top {

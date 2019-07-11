@@ -1,5 +1,4 @@
 <template>
-    <div>
     <div id="content">
         <div id="header">
             <span @click="hanndleBack()"><i class="iconfont icon-zuojiantou"></i></span>
@@ -146,7 +145,6 @@
             </ul>
         </footer>
     </div>
-    </div>
 </template>
 
 
@@ -184,8 +182,8 @@ export default {
 
 }
 #header{
-    width: 6.56rem;
-    padding: 0 .48rem;
+    box-sizing: border-box;
+    width: 100%;
     height: .88rem;
     position: fixed;
     left: 0;
@@ -204,7 +202,11 @@ export default {
     text-indent: -9999px;
 }
 #header>span:nth-of-type(1){
+    margin-left: .3rem;
     float: left;
+}
+#header>span:nth-of-type(3){
+    margin-right: .3rem;
 }
 #header>span{
     display: inline-block;
@@ -221,12 +223,12 @@ export default {
 }
 /* 背景图 */
 #banner{
-    width: 7.5rem;
+    width: 100%;
     height: 4.1rem;
     position: relative;
 }
 #banner>img{
-    width: 7.5rem;
+    width: 100%;
     height: 4.1rem;    
 }
 #banner>div>span{
@@ -325,9 +327,10 @@ export default {
 }
 /* 出发日期 */
 .main-data{
-    padding: .28rem;
+    padding: .28rem 0;   
     box-shadow: 0  12px #e4e2e2;
     height: 1.6rem;
+    margin-left: .28rem;
 
 }
 .main-data-top{
@@ -354,6 +357,7 @@ export default {
 
 }
 .main-nav>ul{
+    width: 100%;
     padding-top:.28rem; 
 }
 .main-nav>ul>li:nth-child(1){
@@ -395,12 +399,12 @@ export default {
     margin-bottom: .28rem;
 }
 .main-traffic-list{
-    width: 6.94rem;
+    width: 100%;
     height: 3.54rem;
 
 }
 .main-traffic-list>li{
-    width: 6.94rem;
+    width: 100%;
     height: 1.78rem;
     margin-bottom: .14rem;
 }
@@ -439,7 +443,7 @@ export default {
 }
 /* 描述导航 */
 .main-traffic-nav>ul{
-    width: 7.5rem;
+    width: 100%;
     height: .8rem;
     overflow: hidden;
     border-bottom: 2px solid #cccccc
@@ -497,30 +501,24 @@ export default {
     display: block;
 }
 .main-text>img{
-    float: left;
+    width: 100%;
 }
 .main-text>img:nth-of-type(1){
-    width: 6.94rem;
     height: 4.3rem;
 }
 .main-text>img:nth-of-type(2){
-    width: 6.94rem;
     height: 13.2rem;
 }
 .main-text>img:nth-of-type(3){
-    width: 6.94rem;
     height: 11.2rem;
 }
 .main-text>img:nth-of-type(4){
-    width: 6.94rem;
     height: 19.6rem;
 }
 .main-text>img:nth-of-type(5){
-    width: 6.94rem;
     height: 7rem;
 }
 .main-text>img:nth-of-type(6){
-    width: 6.94rem;
     height: 4.2rem;
 }
 
@@ -537,7 +535,7 @@ export default {
     background: #ffffff;
 }
 #footer>ul{
-    width: 7.5rem;
+    width:100%;
     display: flex;
     justify-content: space-between;
 }

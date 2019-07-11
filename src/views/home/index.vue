@@ -1,9 +1,4 @@
 <template>
-
-    <BScroll>
-       
-      
-      <!-- <template> -->
       <div id="box" >
           <HomeBanner />
         <div class="ipt-box">
@@ -55,10 +50,6 @@
                     <p>生活</p>
                 </router-link>
             </ul>
-            <p>
-                <span></span>
-                <span></span>
-            </p>
         </div>
         <div id="main">
             <div class="main-header">
@@ -112,18 +103,15 @@
                 
             </div>          
         </div>
+              <router-link src="http://media.china-sss.com/img/M00/00/0A/wKjFbFpmvGSAQ9FSAABpLtCfBRA957.png" class="night" to="/night" tag="img">
+        </router-link>
+
       </div>
      
-                  <router-link src="http://media.china-sss.com/img/M00/00/0A/wKjFbFpmvGSAQ9FSAABpLtCfBRA957.png" class="night" to="/night" tag="img">
-            </router-link>
-
-    </BScroll>
-   
 
    
 </template>
 <script>
-// import BScroll from "better-scroll";
 
 import HomeBanner from "components/homeBanner";
 import HomeBody from "components/homeBody";
@@ -133,7 +121,6 @@ export default {
   components: {
     HomeBanner,
     HomeBody
-    // BScroll
   },
   data() {
     return {};
@@ -215,18 +202,6 @@ export default {
   text-align: center;
   color: #333333;
   font-size: 0.24rem;
-}
-#nav > p {
-  width: 100%;
-  text-align: center;
-}
-#nav > p > span {
-  display: inline-block;
-  width: 0.12rem;
-  height: 0.12rem;
-  line-height: 0.28rem;
-  border-radius: 50%;
-  border: 1px solid #cccccc;
 }
 /* 主体 */
 .main-header {
@@ -324,8 +299,6 @@ export default {
 }
 
 /* 商品 */
-.main-nav {
-}
 .main-nav > ul {
   height: 0.82rem;
   width: 7.5rem;
@@ -346,6 +319,8 @@ export default {
   position: fixed;
   right: 0;
   bottom: 2rem;
+  width: 1.4rem;
+  height: 1.4rem;
 }
 </style>
 

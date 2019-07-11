@@ -74,13 +74,13 @@
                     泰国
                 </li>
                 <li>
-                    泰国
+                    日本
                 </li>
                 <li>
-                    泰国
+                    东南亚
                 </li>
                 <li>
-                    泰国
+                    欧美
                 </li>
             </ul>
             <div class="main-content-box">
