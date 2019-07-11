@@ -163,7 +163,11 @@
    </BScroll>    
     </div>
 
+<<<<<<< HEAD
    
+=======
+      <h2>mine</h2>
+>>>>>>> dev
     </div>
   
 </template>
