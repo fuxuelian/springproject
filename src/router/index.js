@@ -7,23 +7,6 @@ import list from "./list";
 import mine from "./mine";
 import order from "./order";
 import telme from "./telme";
-<<<<<<< HEAD
-import member from "./member";
-import login from "./login";
-;
-
-export default new Router({
-    routes:[
-      home,
-      list,
-      mine,
-      order,
-      telme ,
-      member,
-      login
-    ]
-})
-=======
 import details from "./details";
 import night from "./night";
 import orderDetails from "./order-details";
@@ -44,4 +27,3 @@ export default new Router({
     live
   ]
 })
->>>>>>> he

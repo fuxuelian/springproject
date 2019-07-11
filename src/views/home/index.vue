@@ -1,32 +1,10 @@
 <template>
-<<<<<<< HEAD
-  <div>
-<<<<<<< HEAD
-    <router-view></router-view>
 
-    <h2>home</h2>
-  </div>
-</template>
-<script>
-export default {
-  name: "home",
-
-  data() {
-    return {
-
-
-    };
-=======
-    
-      <div id="box">
-=======
-  
     <BScroll>
        
       
       <!-- <template> -->
       <div id="box" >
->>>>>>> he
           <HomeBanner />
         <div class="ipt-box">
             <a href="javascript:;"> 深圳 <i class="iconfont icon-sanjiaodown"></i></a>
@@ -147,26 +125,20 @@ export default {
 <script>
 // import BScroll from "better-scroll";
 
-import HomeBanner from "components/homeBanner"
-import HomeBody from "components/homeBody"
+import HomeBanner from "components/homeBanner";
+import HomeBody from "components/homeBody";
 
 export default {
   name: "home",
-  components:{
-      HomeBanner,
-      HomeBody,
-      // BScroll
-
+  components: {
+    HomeBanner,
+    HomeBody
+    // BScroll
   },
   data() {
     return {};
-<<<<<<< HEAD
->>>>>>> he
-=======
-
->>>>>>> he
   },
-  methods: {},
+  methods: {}
   // mounted(){
   //   console.log(this.$refs.bscroll)
   //   // this.scroll=new scroll(this.$refs.bscroll)
@@ -174,16 +146,10 @@ export default {
 };
 </script>
 <style scoped>
-<<<<<<< HEAD
-
-
-
-=======
 #box {
   position: relative;
   box-sizing: border-box;
 }
-
 
 .ipt-box {
   position: absolute;
@@ -232,7 +198,6 @@ export default {
   margin-bottom: 0.2rem;
   box-shadow: 0 12px #e4e2e2;
   overflow: hidden;
-
 }
 .nav-box {
   width: 100%;
@@ -290,16 +255,16 @@ export default {
 .main-title {
   font-size: 0.3rem;
   margin-bottom: 0.6rem;
-  overflow:hidden; 
-  text-overflow:ellipsis;
-  display:-webkit-box; 
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp:2; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .main-text > p {
   float: left;
   color: red;
-  margin-right: .8rem;
+  margin-right: 0.8rem;
 }
 .main-text > p > em {
   font-size: 0.42rem;
@@ -364,7 +329,7 @@ export default {
 .main-nav > ul {
   height: 0.82rem;
   width: 7.5rem;
-  margin-top: .28rem;
+  margin-top: 0.28rem;
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid #eeeeee;
@@ -377,12 +342,11 @@ export default {
 }
 
 /* 商品列表 */
-.night{
-    position: fixed;
-    right: 0;
-    bottom: 2rem;
+.night {
+  position: fixed;
+  right: 0;
+  bottom: 2rem;
 }
->>>>>>> he
 </style>
 
 

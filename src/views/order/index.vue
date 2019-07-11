@@ -1,33 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div>
-    <!-- 头部开始 -->
-    <div class="wrap">
-      <mt-header title="城市选择" class="header">
-        <router-link to="/" slot="left">
-          <mt-button icon="iconfont icon-xingzuo" class="icon">
-            <i class="1111"></i>
-          </mt-button>
-        </router-link>
-        <mt-button icon="more" slot="right"></mt-button>
-      </mt-header>
-      <!-- 头部结束 -->
-      <mt-index-list>
-        <mt-index-section index="A">
-          <mt-cell title="Aaron"></mt-cell>
-          <mt-cell title="Alden"></mt-cell>
-          <mt-cell title="Austin"></mt-cell>
-        </mt-index-section>
-        <mt-index-section index="B">
-          <mt-cell title="Baldwin"></mt-cell>
-          <mt-cell title="Braden"></mt-cell>
-        </mt-index-section>...
-        <mt-index-section index="Z">
-          <mt-cell title="Zack"></mt-cell>
-          <mt-cell title="Zane"></mt-cell>
-        </mt-index-section>
-      </mt-index-list>
-=======
 
     <div>
        <!-- 头部 -->
@@ -128,39 +99,16 @@
             </ul>
          </div>
     </div>
->>>>>>> zhangbaoyin
     </div>
-  </div>
+
 </template>
-<<<<<<< HEAD
-=======
 <script>
 // import Shuffling from "components/shuffling";
 // import Remark from "components/remark"; 
 import {shuffling} from "api/destination";
 import { Swipe, SwipeItem } from 'mint-ui';
->>>>>>> zhangbaoyin
-
-
-
-<script>
 export default {
-<<<<<<< HEAD
-  name: "order",
-  components: {}
-};
-</script>
-<style scoped>
-body,
-html {
-  height: 100%;
-}
-.warp {
-  width: 100%;
-  height: 100%;
-}
-=======
-    name:"order" ,
+    name:"order",
     components:{
         // Shuffling,
         // Remark
@@ -184,21 +132,9 @@ html {
             banners:[]
         }
     },
-
-
->>>>>>> zhangbaoyin
-
-.header{
-  height: 1rem;
-  background-color:#fff;
-}
-<<<<<<< HEAD
-.icon{
-  font-size: .3rem;
 }
 
-</style>
-=======
+
 </script>
 <style scoped>
    .header{
@@ -413,4 +349,3 @@ html {
     
 }
 </style>
->>>>>>> zhangbaoyin

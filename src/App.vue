@@ -1,22 +1,11 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-    <router-view></router-view>
-<<<<<<< HEAD
-   
-    
-    <TabBar/>
 
-=======
-
-=======
-    <keep-alive>
+   <keep-alive>
         <router-view></router-view>
     </keep-alive>
->>>>>>> he
 
     <TabBar v-if="$route.meta.flag"/>
->>>>>>> he
   </div>
 </template>
 
