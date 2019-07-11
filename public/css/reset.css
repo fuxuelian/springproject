@@ -12,7 +12,7 @@ h1,h2,h3,h4,h5,h6,b,strong,address, caption, cite, code, dfn, th, var { font-sty
 
 ul, ol ,li{ list-style:none; }
 
-body { color:#333; font:14px "-apple-system",Helvetica,"Microsoft YaHei","Ping Hei",Arial;background-color: #f2f4f6;}
+body { color:#333; font:14px "-apple-system",Helvetica,"Microsoft YaHei","Ping Hei",Arial;}
 
 a { color:#666; text-decoration:none; }
 /*清除浮动*/

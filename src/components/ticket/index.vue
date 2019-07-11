@@ -1,12 +1,18 @@
 <template>
     
 <div>
+    <HeaderCom />
+    <router-link to="" ></router-link>
     <!-- 内容 -->
     <div class="main">
 
         <!-- banner图 -->
         <div class="banner">
-            <img src="//media.china-sss.com/img/M00/04/10/wKjFbVt856uABd68AAEGRkhPibo265.png" alt="">
+            <mt-swipe :auto="2000">
+                <mt-swipe-item v-for="(item,index) in banners" :key="index">
+                    <img :src="item.imgurl"/>
+                </mt-swipe-item>
+            </mt-swipe>
         </div>
         <div class="main-top">
             <div>
@@ -48,9 +54,8 @@
             </div>
             <div class="box-tab">
                 <ul>
-                    <li><a href="javascript:;">门票/卡券</a></li>
-                    <li><a href="javascript:;">机场接送</a></li>
-                    <li class="box-color"><a href="javascript:;">一日游</a></li>
+                    <li v-for="(item,index) in positions" :key="index" >{{item.name}}</li>
+                    
                 </ul>
             </div>
         </div>
@@ -65,7 +70,8 @@
             </div>
             <!-- 目的地 -->
             <div class="wrap-pic">
-                <div class="wrap-free">
+                <TicketpicOne/>
+                <!-- <div class="wrap-free">
                     <ul>
                         <li>
                             <div class="wrap-img">
@@ -107,10 +113,10 @@
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div> -->
 
                 <!-- 跟团游 -->
-                <div class="wrap-free">
+                <!-- <div class="wrap-free">
                     <ul>
                         <li>
                             <div class="wrap-img">
@@ -152,7 +158,8 @@
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div> -->
+                <TicketpicTwo/>
             </div>
         </div>
     </div>
@@ -166,8 +173,33 @@
 
 
 <script>
+import {ticket} from "api/destination";
+import {ticketTrip} from "api/destination";
+import { Swipe, SwipeItem } from 'mint-ui';
+import TicketpicOne from "components/ticketpicOne";
+import TicketpicTwo from "components/ticketpicTwo";
 export default {
-    
+    name:"tickei",
+    async created() {
+        let data = await ticket()
+        console.log(data.data.data.banners);
+        this.banners = data.data.data.banners;
+
+        let datas = await ticketTrip()
+        console.log(datas.data.positions);
+        this.positions = datas.data.positions
+        
+    },
+    components:{
+        TicketpicOne,
+        TicketpicTwo
+    },
+    data() {
+        return {
+            banners:[],
+            positions:[]
+        }
+    },
 
 
 }
@@ -175,6 +207,10 @@ export default {
 
 
 <style scoped>
+.banner{
+    width: 100%;
+    height: 2.6rem;
+}
 
 .main{
     width: 100%;
@@ -226,7 +262,7 @@ export default {
     overflow: hidden;
     padding: .1rem .3rem .3rem .3rem;
     padding-bottom: .3rem;
-
+    background-color: #fff;
 }
 .main-city .tocity{
     line-height: 1rem;
@@ -268,6 +304,7 @@ export default {
 .main-btn{
     padding: 0 .3rem;
     padding-bottom: .3rem;
+    background-color: #fff;
 }
 .main-btn a{
     display: block;
@@ -281,6 +318,7 @@ export default {
 .main-new{
     border-top: 1px solid #f5f5f5;
     padding: 0 .3rem .1rem .3rem;
+    background-color: #fff;
 }
 .main-new .new-outer {
     display: inline-block;
@@ -300,6 +338,7 @@ export default {
 
 .main-box{
     border-bottom: .2rem solid #ededed;
+    background-color: #fff;
 }
 .main-box .main-title{
     padding: .2rem .3rem 0 .3rem;
@@ -331,6 +370,9 @@ export default {
 }
 
 /* 目的地导航切换 */
+.main-wrap{
+    background-color: #fff;
+}
 .main-wrap .wrap-tab ul{
     display: flex;
     justify-content: space-around;

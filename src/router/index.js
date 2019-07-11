@@ -7,12 +7,16 @@ import list from "./list";
 import mine from "./mine";
 import order from "./order";
 import telme from "./telme";
+import ticket from "./ticket";
+import japen from "./japen";
 export default new Router({
     routes:[
       home,
       list,
       mine,
       order,
-      telme  
+      telme,
+      ticket,
+      japen
     ]
 })

@@ -1,10 +1,8 @@
 <template>
-    <div>
-        
-        <div class="tab-content">
-            <Loading v-if="loadingFlag"/>
-        <ul v-if="!loadingFlag">
-            <li v-for="(item,index) in dates" :key="index">
+
+        <div class="tab-content" >
+        <ul>
+            <li v-for="(item,index) in banners" :key="index">
                 <div class="find-txt">
                     <h2>{{item.detail.title}}</h2>
                     <img :src="item.pictures[0].url" alt="">
@@ -26,29 +24,21 @@
             </li>
         </ul>
         </div>
-</div>
+
 </template>
 
 <script>
-import {shuffling} from "api/destination";
+import {official} from "api/destination";
 export default {
-    name:"shuffling",
+    name:"official",
     async created() {
-        let data = await shuffling()
+        let data = await official()
         console.log(data.data);
-        this.dates = data.data;
-
-        if (data) {
-            this.loadingFlag = false
-        } else {
-            this.loadingFlag = true
-
-        }
+        this.banners = data.data;
     },
     data() {
         return {
-            dates:[],
-            loadingFlag:true
+            banners:[]
         }
     },
 

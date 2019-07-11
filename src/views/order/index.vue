@@ -8,7 +8,9 @@
     </div>
 
      <!-- 内容 -->
-    <div class="main">
+    <div class="main" ref="orderBody">
+        <div class="fa fa-spinner fa-pulse"></div>
+        <div>
         <!-- 搜索 -->
         <div class="top-search">
             <div class="search">
@@ -20,110 +22,50 @@
         </div>
          <!-- 图片轮播 -->
          <div class="pic">
-            
-                 <!-- <template v-slot:banner="props">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide" v-for="(item,index) in props.banners" :key="index">
-                            <img :src="item.imgurl" alt="">
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                 </template> -->
-               
                 <mt-swipe :auto="2000">
                     <mt-swipe-item v-for="(item,index) in banners" :key="index">
-                        
-                            <img :src="item.imgurl"/>
-                       
+                        <img :src="item.imgurl"/>
                     </mt-swipe-item>
-                   
                 </mt-swipe>
-               
-             
-             <!-- <img src="//media.china-sss.com/img/M00/04/F1/wKjFbF0caw6ASPJDAAHVJmKCp68443.jpg " alt=""> -->
          </div> 
          <!-- 切换 -->
          <div class="main-tab">
             <ul>
-                <li class="tab-one"><a href="javascript:;">最新</a></li>
-                <li><a href="javascript:;">游人达记</a></li>
-                <li><a href="javascript:;">官方推荐</a></li>
+                <router-link class="tab-one" to="remark" tag="li">最新</router-link>
+                <router-link to="shuffling" tag="li">游人达记</router-link>
+                <router-link to="official" tag="li">官方推荐</router-link>
             </ul>
+            <router-view></router-view>
          </div>
-         <!-- 风景推荐 -->
-         <div class="tab-content" >
-             
-            <ul>
-                <!-- <Remark/> -->
-                <li>
-                    <div class="find-txt">
-                        <h2>多家超人气民宿¥599起，莫干山避暑正当时！</h2>
-                        <img src="http://media.china-sss.com/img/M00/04/F2/wKjFbF0doNmAeMe4AApyHYZOOB0323.png" alt="">
-                        <p>热门首选</p>
-                    </div>
-                    <div class="find-tag">
-                        <div class="find-fl">
-                            <img src="http://media.china-sss.com/img/M00/04/65/wKjFbFx4voKASVWNAAGvHh4IL7s229.png" alt="">
-                            <strong>春小秋</strong>
-                            <i class="iconfont icon-nvx"></i>
-                        </div>
-                        <div class="find-fr">
-                            <p>
-                                <i class="iconfont icon-xiaoyanjing"></i>
-                                13
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="find-txt">
-                        <h2>有个地方叫稻城，我要和我心爱的人，一起去到那里</h2>
-                    </div>
-                        <div class="find-img">
-                            <img src="http://media.china-sss.com/img/M00/04/16/wKjFbVuNA86AdUSlAAC-8CSSZxU674.jpg" alt="">
-                            <img src="http://media.china-sss.com/img/M00/04/16/wKjFbVuNA86AYruiAADr_ZkjqYk780.jpg" alt="">
-                            <img src="http://media.china-sss.com/img/M00/04/16/wKjFbFuNA86AGZ9eAADJIl2shLQ868.jpg" alt="">
-                        </div>
-                    
-                    
-                    <div class="find-tag">
-                        <div class="find-fr">
-                            <p>
-                                <i class="iconfont icon-xiaoyanjing"></i>
-                                33
-                            </p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
          </div>
     </div>
     </div>
 </template>
 <script>
-// import Shuffling from "components/shuffling";
-// import Remark from "components/remark"; 
-import {shuffling} from "api/destination";
+import {lunbo} from "api/destination";
 import { Swipe, SwipeItem } from 'mint-ui';
-
+// import BScroll from "better-scroll";
 export default {
     name:"order" ,
-    components:{
-        // Shuffling,
-        // Remark
-    },
+
     methods: {
         handleZuo(){
             this.$router.back()
         }
     },
+    // mounted() {
+    //     // console.log(this.$refs.orderBody);
+        
+    //     this.scroll = new BScroll(this.$refs.orderBody);
+    //     console.log(this.scroll);
+        
+    // },
    
 
 
 
     async created() {
-        let data = await shuffling()
+        let data = await lunbo()
         console.log(data.data.data.banners);
         this.banners = data.data.data.banners
     },
@@ -159,6 +101,7 @@ export default {
     color: #333;
     overflow: hidden;
     font-weight: 400;
+    border-bottom: 1px solid #ededed;
 }
 .header .icon-zuojiantou1{
     font-size: .5rem;
@@ -252,10 +195,12 @@ export default {
     background-color: #fff;
     position: relative;
 }
-.main-tab ul .tab-one a{
+
+.main-tab ul .router-link-active{
     color: #00be88;
     border-bottom: 2px solid #00be88;
 }
+
 .main-tab ul>li{
     float: left;
     height: .6rem;
@@ -329,7 +274,6 @@ export default {
     font-size: .3rem;
     font-weight: 400;
     margin-left: .1rem;
-    /* float: left; */
 }
 .tab-content ul li .find-tag .icon-nvx{
     font-size: .25rem;
