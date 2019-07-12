@@ -1,5 +1,5 @@
 export default{
-    path:"/order-details/:id",
+    path:"/order-details",
     component:()=>import("components/order-details"),
     name:"orderDetails",
     props:true,

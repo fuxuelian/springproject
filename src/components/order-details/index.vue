@@ -331,6 +331,7 @@ export default {
     box-shadow: 0  12px #e4e2e2;
     height: 1.6rem;
     margin-left: .28rem;
+    margin-top: .28rem;
 
 }
 .main-data-top{
@@ -385,8 +386,9 @@ export default {
 }
 /* 交通信息 */
 .main-traffic{
-    padding: .28rem;
+    padding: .28rem .28rem 0 .28rem;
     box-shadow: 0  12px #e4e2e2;
+    margin-top: .28rem;
 
 }
 .main-traffic>h2{
@@ -442,6 +444,9 @@ export default {
     line-height: .5rem;
 }
 /* 描述导航 */
+.main-traffic-nav{
+    margin-top: .28rem;
+}
 .main-traffic-nav>ul{
     width: 100%;
     height: .8rem;

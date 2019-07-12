@@ -94,12 +94,14 @@
             </div>
             <div class="main-nav">
                 <ul>
-                    <li><a href="javascript:;">本季主打</a></li>
-                    <li><a href="javascript:;">品质出境</a></li>
-                    <li><a href="javascript:;">品质出境</a></li>
+                    <router-link tag="li" to="/home/homeBody"><p>本季主打</p></router-link >
+                    <router-link tag="li" to="/home/quality"><p>品质出境</p></router-link >
+                    <router-link tag="li" to="/home/homeInland"><p>省心国内</p></router-link >
                 </ul>
                 
-                <HomeBody></HomeBody>
+            <keep-alive>
+                <router-view/>
+            </keep-alive>
                 
             </div>          
         </div>
@@ -267,6 +269,9 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+.main-content > ul > li>img{
+  width: 2.14rem;
+}
 .main-content > ul > li:nth-child(1) {
   width: 2.22rem;
   height: 1.62rem;
@@ -307,7 +312,7 @@ export default {
   justify-content: space-around;
   border-bottom: 1px solid #eeeeee;
 }
-.main-nav > ul > li > a {
+.main-nav > ul > li > p {
   width: 1.2rem;
   text-align: center;
   line-height: 0.82rem;
@@ -315,6 +320,14 @@ export default {
 }
 
 /* 商品列表 */
+
+.router-link-active{
+    border-bottom: 3px solid #00be88;
+}
+.main-nav  .router-link-active>p{
+    color: #00be88;
+}
+/* 夜市图 */
 .night {
   position: fixed;
   right: 0;
@@ -322,6 +335,7 @@ export default {
   width: 1.4rem;
   height: 1.4rem;
 }
+
 </style>
 
 

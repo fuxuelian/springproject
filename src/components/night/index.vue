@@ -1,8 +1,10 @@
 <template>
-    <div>
-    <Loading v-if="loadingFalg"/>
-   <div id="content" v-if="!loadingFalg">
-        <header id="header">
+    
+   <div id="content" >
+    <BScroll>
+        <div>
+        <Loading v-if="loadingFalg"/>
+        <header id="header" v-if="!loadingFalg">
             <p>规则</p>
             <img src="https://media.china-sss.com/img/M00/04/D3/wKjFbFzuTJ-ANJzCAAHBlPxPY7k191.png"   alt="">
         </header>
@@ -34,9 +36,10 @@
                 <router-view/>
             </keep-alive>
         </main>
+        </div>
+        </BScroll>
    </div>
 
-    </div>
 </template>
 
 <script>

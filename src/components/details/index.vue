@@ -307,7 +307,7 @@ export default {
 }
 .nav-box {
   width: 7.3rem;
-  margin-bottom: 0.2rem;
+  margin: 0.2rem 0;
 }
 .nav-box > h4 {
   display: inline-block;
@@ -341,6 +341,7 @@ export default {
   display: flex;
   justify-content: space-around;
   border: 1px solid #eeeeee;
+  margin-top: .28rem;
 }
 .main-top-list > li {
   font-size: 0.28rem;

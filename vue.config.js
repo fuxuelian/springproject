@@ -4,10 +4,13 @@ module.exports={
     devServer:{
         open:true,
         proxy:{
-            "/api":{
+            "/m":{
                 target:"http://m.springtour.com",
                 changeOrigin:true,
-                pathRewrite:{"^/api":""}                 
+            },
+            "/s":{
+                target:"http://m.springtour.com",
+                changeOrigin:true,
             }
         }
     },

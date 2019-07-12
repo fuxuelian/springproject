@@ -11,7 +11,7 @@
 
 <script>
 
-import TabBar from "common/footer/"
+import TabBar from "common/footer"
 
 
 export default {

@@ -3,7 +3,7 @@ export default{
     component:()=>import("views/telme"),
     name:"telme",
     meta:{
-        flag:true
+        flag:false
     }
 
 }

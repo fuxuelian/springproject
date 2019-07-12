@@ -288,6 +288,7 @@ export default {
   padding: 0.28rem;
 }
 .prefecture > h3 {
+  margin-top: .28rem;
   font-size: 0.3rem;
 }
 .prefecture-list {
@@ -330,6 +331,7 @@ export default {
   display: inline-block;
   font-size: 0.3rem;
   font-weight: 600;
+  margin-top: .28rem;
 }
 .popularity-top > span {
   color: #999999;
@@ -436,6 +438,8 @@ export default {
   width: 100%;
   height: 0.44rem;
   padding: 0.28rem 0;
+  margin-top: .28rem;
+
 }
 .ntegral-top > h3 {
   font-size: 0.3rem;

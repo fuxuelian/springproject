@@ -21,11 +21,11 @@
 
 <script>
 
-import {getHome} from "api/home.js"
+import {homeInland} from "api/home.js"
 export default {
-    name:"homeBody",
+    name:"homeQuality",
    async created(){
-        let data=await getHome()
+        let data=await homeInland()
         this.homeList = data.data.data.products
         
         if(data){
