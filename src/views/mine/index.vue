@@ -2,6 +2,7 @@
     <div>
         
      <div class="wrap">
+       
        <BScroll>
       <article class="main">
         <!-- 头部的背景 -->

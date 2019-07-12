@@ -1,17 +1,19 @@
 const path =require("path")
 
 module.exports={
+    publicPath:"spring",
     devServer:{
         open:true,
         proxy:{
             "/m":{
                 target:"http://m.springtour.com",
                 changeOrigin:true,
+                    
             },
-            "/s":{
+            "/site":{
                 target:"http://m.springtour.com",
-                changeOrigin:true,
-            }
+                changeOrigin:true,          
+            },
         }
     },
     configureWebpack:{
