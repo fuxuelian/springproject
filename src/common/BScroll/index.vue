@@ -3,57 +3,43 @@
         <slot></slot>
     </div>
 </template>
-
 <script>
 import BScroll from "better-scroll"
 export default {
-    name:"BScroll",
-    data() {
-        return {
-            
-        }
+    name:"Bscroll",
+   mounted() {
+       console.log(this.$refs.wrapper)
+    this.scroll = new BScroll(this.$refs.wrapper, {
+      probeType: 1,
+      tap:true,
+      click:true
+    });    
     },
-    mounted() {
-        this.scroll = new BScroll(this.$refs.wrapper,{
-            probeType:1
-        });
-
-        this.scroll.on("scroll",({x,y})=>{
-          if (y>30) {
-            this.scrollstart()
-          }
-          
-        })
-
-        this.scroll.on("scrollEnd",()=>{
-          
-            setTimeout(()=>{
-                this.scrollEnd()
-            },1000)
-         
-          
-        })
-    },
-    methods: {
-        scrollstart(cb){
-            cb(true)
-
+    methods:{
+        handleScrollTo(y){
+            this.scroll.scrollTo(0,y,300)
         },
-        scrollEnd(cb){
-            cb(false)
-
-        }
-    },
-
-
+        handleScrollStart(cb){
+            this.scroll.on("scroll",({x,y})=>{
+                if(y>30){
+                    cb()
+                }
+            })
+        },
+        handleScrollEnd(cb){
+            this.scroll.on("scrollEnd",()=>{
+                setTimeout(()=>{
+                cb();
+            },1000)
+       })
+     },
+    }
 }
 </script>
-
 <style>
-.wrapper{
-    height: 100%;
-}
-
-
+    .wrapper{
+        height: 100%;
+    }
 </style>
+
 

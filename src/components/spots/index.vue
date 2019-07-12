@@ -1,23 +1,8 @@
 <template>
 <div class="main-theme">
-    <!-- <div class="theme-title">
-        <h3>主题推荐</h3>
-    </div> -->
+
     <div class="main-tab">
-        <!-- <div class="tab-box">
-            <div class="theme-t">
-                <h4>当季优选</h4>
-            </div>
-            <div class="tab-nav">
-                <ul>
-                    <li class="tab-color">热门主推</li>
-                    <router-link to="/japen/japenTwo" tag="li">暑期正当时</router-link>
-                    <li>热门主推</li>
-                    <li>热门主推</li>
-                </ul>
-                <router-link ></router-link>
-            </div>
-        </div> -->
+
         
         <!-- 产品滚动列表 -->
         <div class="tab-content">

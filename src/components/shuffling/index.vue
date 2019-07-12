@@ -60,7 +60,6 @@ export default {
 .tab-content ul li{
     padding: .3rem .25rem .15rem .25rem;
     border-top: 1px solid #ccc;
-    width: 100%;
 
 }
 .tab-content ul li .find-txt{
@@ -70,7 +69,7 @@ export default {
     overflow: hidden;
     line-height: .5rem;
     font-size: .4rem;
-    font-weight: 900;
+    font-weight: 500;
     color: #333;
     text-overflow: ellipsis;
     margin-bottom: .2rem;

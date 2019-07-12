@@ -53,13 +53,14 @@ export default {
 </script>
 <style scoped>
 #footer{
+  background-color: #fff;
     width: 100%;
     height: auto;
     position: fixed;
     bottom: 0;
     left: 0;
-    border-top: 1px solid #ddd;
-    background-color: #fff;
+   border-top: 1px solid #ddd;
+   background: #ffffff;
 }
 
 #footer>ul{

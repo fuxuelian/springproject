@@ -1,222 +1,179 @@
 <template>
     <div>
         <!-- 头部 -->
-    <div class="header">
-        <a href="javascript:;" @click="handleClickAdd()"><i class="iconfont icon-zuojiantou1"></i></a>
-        <a href="javascript:;"><i class="iconfont icon-ziyuan1"></i></a>
-        <h2>日本游</h2>
-    </div>
-
-    <!-- 内容 -->
-    <div class="main"  ref="listBody">
-        <!-- 轮播图 -->
-<div>
-        <banner class="banner">
-            <mt-swipe :auto="2000">
-                <mt-swipe-item v-for="(item,index) in banners" :key="index">
-                    <img :src="item.imgurl"/>
-                </mt-swipe-item>
-            </mt-swipe>
-        </banner>
-        <div class="search">
-            <!-- 城市地址搜索 -->
-            <div class="search-top">
-                <a href="javascript:;">深圳<i class="iconfont icon-xjt"></i></a>
-                <input type="text" class="search-ipt" placeholder="搜索你想去的地方">
-                <i class="iconfont icon-fangdajing"></i>
-            </div>
-            <!-- 列表导航 -->
-            <div class="main-nav">
-                <ul class="nav-wrap">
-                    <li>
-                        <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAVivqAAALFv1SAPM842.png" alt="">
-                        <p>机票</p>
-                    </li>
-                    <li>
-                        <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDaAZYopAAAHJsAc42c784.png" alt="">
-                        <p>酒店</p>
-                    </li>
-                    <li>
-                        <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAD8N6AAAKYPBlJko171.png" alt="">
-                        <p>签证</p>
-                    </li>
-                    <li>
-                        <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAO3QYAAAMPd6rxGk509.png" alt="">
-                        <p>当地玩乐</p>
-                    </li>
-                    <li>
-                        <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDaAACbUAAAHW-leNGo565.png" alt="">
-                        <p>出境游</p>
-                    </li>
-                    <li>
-                        <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAPGUOAAAIxl2v8KA345.png" alt="">
-                        <p>出境游</p>
-                    </li>
-                    <li>
-                        <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDaANUoIAAAIkn5Jbp4147.png" alt="">
-                        <p>出境游</p>
-                    </li>
-                    <li>
-                        <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAdxjHAAAJCjhEV7c396.png" alt="">
-                        <p>出境游</p>
-                    </li>
-                </ul>
-            </div>
+        <div class="header">
+            <a href="javascript:;" @click="handleClickAdd()"><i class="iconfont icon-zuojiantou1"></i></a>
+            <a href="javascript:;"><i class="iconfont icon-ziyuan1"></i></a>
+            <h2>日本游</h2>
         </div>
 
-
-        <div class="main-theme">
-            <div class="theme-title">
-                <h3>主题推荐</h3>
-            </div>
-            <div class="main-tab">
-                <div class="tab-box">
-                    <div class="theme-t">
-                        <h4>当季优选</h4>
+        <!-- 内容 -->
+        <div class="main"  ref="listBody">
+        <BScroll>
+            <template>
+                
+            <!-- 轮播图 -->
+                <div>
+                    <banner class="banner">
+                        <mt-swipe :auto="2000">
+                            <mt-swipe-item v-for="(item,index) in banners" :key="index">
+                                <img :src="item.imgurl"/>
+                            </mt-swipe-item>
+                        </mt-swipe>
+                    </banner>
+                    <div class="search">
+                        <!-- 城市地址搜索 -->
+                        <div class="search-top">
+                            <a href="javascript:;">深圳<i class="iconfont icon-xjt"></i></a>
+                            <input type="text" class="search-ipt" placeholder="搜索你想去的地方">
+                            <i class="iconfont icon-fangdajing"></i>
+                        </div>
+                        <!-- 列表导航 -->
+                        <div class="main-nav">
+                            <ul class="nav-wrap">
+                                <li>
+                                    <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAVivqAAALFv1SAPM842.png" alt="">
+                                    <p>机票</p>
+                                </li>
+                                <li>
+                                    <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDaAZYopAAAHJsAc42c784.png" alt="">
+                                    <p>酒店</p>
+                                </li>
+                                <li>
+                                    <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAD8N6AAAKYPBlJko171.png" alt="">
+                                    <p>签证</p>
+                                </li>
+                                <li>
+                                    <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAO3QYAAAMPd6rxGk509.png" alt="">
+                                    <p>当地玩乐</p>
+                                </li>
+                                <li>
+                                    <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDaAACbUAAAHW-leNGo565.png" alt="">
+                                    <p>出境游</p>
+                                </li>
+                                <li>
+                                    <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAPGUOAAAIxl2v8KA345.png" alt="">
+                                    <p>出境游</p>
+                                </li>
+                                <li>
+                                    <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDaANUoIAAAIkn5Jbp4147.png" alt="">
+                                    <p>出境游</p>
+                                </li>
+                                <li>
+                                    <img src="//media.china-sss.com/img/M00/04/D1/wKjFbFznvDWAdxjHAAAJCjhEV7c396.png" alt="">
+                                    <p>出境游</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    
-                    <div class="tab-nav " >
-                    
-                        <ul class="scrollBox::-webkit-scrollbar">
-                            <router-link class="tab-color" to="/japen/spots" tag="li" >热门主推</router-link>
-                            <router-link to="/japen/japenTwo" tag="li">暑期正当时</router-link>
-                            <router-link to="/japen/japenThree" tag="li">温泉体验</router-link>
-                            <router-link to="/japen/japenfour" tag="li">出行搭配</router-link>
+
+
+                    <div class="main-theme">
+                        <div class="theme-title">
+                            <h3>主题推荐</h3>
+                        </div>
+                        <div class="main-tab">
+                            <div class="tab-box">
+                                <div class="theme-t">
+                                    <h4>当季优选</h4>
+                                </div>
+                                
+                                <div class="tab-nav " >
+                                
+                                    <ul class="scrollBox::-webkit-scrollbar">
+                                        <router-link class="tab-color" to="/japen/spots" tag="li" >热门主推</router-link>
+                                        <router-link to="/japen/japenTwo" tag="li">暑期正当时</router-link>
+                                        <router-link to="/japen/japenThree" tag="li">温泉体验</router-link>
+                                        <router-link to="/japen/japenfour" tag="li">出行搭配</router-link>
+                                    </ul>
+                                <keep-alive>
+                                    <router-view></router-view>
+                                </keep-alive>
+
+                                </div>
+                            </div>
+                        <!-- <Spots/> -->
+                        </div>
+                    </div>
+
+
+                    <!-- 城市选择 -->
+                    <div class="main-ctiy">
+                        <div class="ctiy-box">
+                            <h4>热门城市</h4>
+                            <span>热门城市</span>
+                        </div>
+                        <ul class="ctiy-list">
+                            <li>
+                                <img src="http://media.china-sss.com/img/M00/04/4A/wKjFbFw5cbaATuWsAAF6sOaJ-7M076.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="http://media.china-sss.com/img/M00/00/01/wKjFbVm2FwiAbfwzAAB_QLYVgoU239.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="http://media.china-sss.com/img/M00/00/03/wKjFbVnpt2-AX0mMAADTHBESUac472.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="http://media.china-sss.com/img/M00/00/27/wKjFbVqwwFyAVZwNAACOYNuy9r4595.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="http://media.china-sss.com/img/M00/00/44/wKjFbVsY5xmAXGW2AACY0Nfm35A303.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="http://media.china-sss.com/img/M00/04/34/wKjFbFvtBTeAP02kAAD9v5DjkFI520.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="http://media.china-sss.com/img/M00/04/34/wKjFbFvtBTeAP02kAAD9v5DjkFI520.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="http://media.china-sss.com/img/M00/04/34/wKjFbFvtBTeAP02kAAD9v5DjkFI520.jpg" alt="">
+                            </li>
                         </ul>
-                    <keep-alive>
-                        <router-view></router-view>
-                    </keep-alive>
+                    </div>
+                
+            
+
+                    <!-- 狂欢 -->
+                    <div class="search-footer">
+                        <div class="search-footer-box">
+                            <img src="http://media.china-sss.com/pics/gallery/201711/b740bb8d-1a69-42e4-af3c-5b49a637427e_201711201413_500_350.jpg" alt="">
+                            <div class="search-footer-box-left">
+                                <h3>【限时抢购】深圳直飞日本名古屋往返机票5日自由行（双人赠送Wifi+BIC优惠券+返程升级至27KG行李额）</h3>
+                                <p>深圳出发</p>
+                                <span>￥<em>1299</em>起</span>
+                            </div>
+                        </div>
+                        <div class="search-footer-right">
+                            <h3>自由玩泰国</h3>
+                            <p>错峰出行</p>
+                            <img src="http://media.china-sss.com/img/M00/00/02/wKjFbFnEgbOABPMCAABkdEIunTY225.png" alt="">
+                        </div>
 
                     </div>
-                </div>
-            <!-- <Spots/> -->
-            </div>
-        </div>
 
-
-        <!-- 城市选择 -->
-        <div class="main-ctiy">
-            <div class="ctiy-box">
-                <h4>热门城市</h4>
-                <span>热门城市</span>
-            </div>
-            <ul class="ctiy-list">
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/4A/wKjFbFw5cbaATuWsAAF6sOaJ-7M076.jpg" alt="">
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/00/01/wKjFbVm2FwiAbfwzAAB_QLYVgoU239.jpg" alt="">
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/00/03/wKjFbVnpt2-AX0mMAADTHBESUac472.jpg" alt="">
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/00/27/wKjFbVqwwFyAVZwNAACOYNuy9r4595.jpg" alt="">
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/00/44/wKjFbVsY5xmAXGW2AACY0Nfm35A303.jpg" alt="">
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/34/wKjFbFvtBTeAP02kAAD9v5DjkFI520.jpg" alt="">
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/34/wKjFbFvtBTeAP02kAAD9v5DjkFI520.jpg" alt="">
-                </li>
-                <li>
-                    <img src="http://media.china-sss.com/img/M00/04/34/wKjFbFvtBTeAP02kAAD9v5DjkFI520.jpg" alt="">
-                </li>
-            </ul>
-        </div>
-    
- 
-
-        <!-- 狂欢 -->
-        <div class="search-footer">
-            <div class="search-footer-box">
-                <img src="http://media.china-sss.com/pics/gallery/201711/b740bb8d-1a69-42e4-af3c-5b49a637427e_201711201413_500_350.jpg" alt="">
-                <div class="search-footer-box-left">
-                    <h3>【限时抢购】深圳直飞日本名古屋往返机票5日自由行（双人赠送Wifi+BIC优惠券+返程升级至27KG行李额）</h3>
-                    <p>深圳出发</p>
-                    <span>￥<em>1299</em>起</span>
-                </div>
-            </div>
-            <div class="search-footer-right">
-                <h3>自由玩泰国</h3>
-                <p>错峰出行</p>
-                <img src="http://media.china-sss.com/img/M00/00/02/wKjFbFnEgbOABPMCAABkdEIunTY225.png" alt="">
-            </div>
-
-        </div>
-
-        <!-- 产品 -->
-        <div class="tab-top">
-            <div class="tab-couple">
-                <ul>
-                    <li class="couple-color" >自由行</li>
-                    <li >跟团游</li>
-                    <li >当地玩乐</li>
-                </ul>
-                <div class="tab-city">
-                    <ul>
-                        <li class="tabColor">倾情推荐</li>
-                        <li>本州地区</li>
-                        <li>北海道</li>
-                    </ul>
-                </div>
-            </div>
-            <Freedom/>
-            <!-- <div class="tab-list">
-                <div class="list-content">
-                    <ul>
-                        <li>
-                            <div class="list-img">
-                                <i class="type">自由行</i>
-                                <i class="tag">上海出发</i>
-                                <img src="http://media.china-sss.com/pics/gallery/201701/94d78bbb-3bb2-4c71-9ac5-a665755c9d78_201701051004_500_350.jpg" alt="">
+                    <!-- 产品 -->
+                    <div class="tab-top">
+                        <div class="tab-couple">
+                            <ul>
+                                <li class="couple-color" >自由行</li>
+                                <li >跟团游</li>
+                                <li >当地玩乐</li>
+                            </ul>
+                            <div class="tab-city">
+                                <ul>
+                                    <li class="tabColor">倾情推荐</li>
+                                    <li>本州地区</li>
+                                    <li>北海道</li>
+                                </ul>
                             </div>
-                            <div class="list-txt">
-                                <h4>【暑期预售】大阪5日4晚自由行●宿4晚温泉酒店（入住免费泡汤 +近地铁+早去晚回航班+2站抵达心斋桥）</h4>
-                                <p class="label">
-                                    <span class="bggray">大阪一地 </span>
-                                    <span class="bggray">大阪一地 </span>
-                                    <span class="bggray">大阪一地 </span>
-                                </p>
-                                <p>班期：8月、9月、10月</p>
-                                <p class="money">
-                                    <span><i class="iconfont icon-jiage1"></i><em>3099</em>起</span>
-                                    <span> 评分4.33 </span>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <div class="list-img">
-                                <i class="type">自由行</i>
-                                <i class="tag">上海出发</i>
-                                <img src="http://media.china-sss.com/pics/gallery/201701/94d78bbb-3bb2-4c71-9ac5-a665755c9d78_201701051004_500_350.jpg" alt="">
-                            </div>
-                            <div class="list-txt">
-                                <h4>【暑期预售】大阪5日4晚自由行●宿4晚温泉酒店（入住免费泡汤 +近地铁+早去晚回航班+2站抵达心斋桥）</h4>
-                                <p class="label">
-                                    <span class="bggray">大阪一地 </span>
-                                    <span class="bggray">大阪一地 </span>
-                                    <span class="bggray">大阪一地 </span>
-                                </p>
-                                <p>班期：8月、9月、10月</p>
-                                <p class="money">
-                                    <span><i class="iconfont icon-jiage1"></i><em>3099</em>起</span>
-                                    <span> 评分4.33 </span>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                        <Freedom/>
+                    </div>
                 </div>
-            </div> -->
-        </div>
-</div>
+            
+            </template>
+        </BScroll>
     </div>
-
     </div>
 </template>
 

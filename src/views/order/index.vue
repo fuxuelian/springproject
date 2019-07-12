@@ -9,7 +9,7 @@
 
      <!-- 内容 -->
     <div class="main" ref="orderBody">
-        <div class="fa fa-spinner fa-pulse"></div>
+        <!-- <div class="fa fa-spinner fa-pulse"></div> -->
         <div>
         <!-- 搜索 -->
         <div class="top-search">
@@ -22,7 +22,8 @@
         </div>
          <!-- 图片轮播 -->
          <div class="pic">
-                <mt-swipe :auto="2000">
+             <Loading v-if="loadingFlag"/>
+                <mt-swipe :auto="2000"  v-if="!loadingFlag">
                     <mt-swipe-item v-for="(item,index) in banners" :key="index">
                         <img :src="item.imgurl"/>
                     </mt-swipe-item>
@@ -40,6 +41,7 @@
          </div>
     </div>
     </div>
+
 </template>
 <script>
 import {lunbo} from "api/destination";
@@ -53,25 +55,25 @@ export default {
             this.$router.back()
         }
     },
-    // mounted() {
-    //     // console.log(this.$refs.orderBody);
-        
-    //     this.scroll = new BScroll(this.$refs.orderBody);
-    //     console.log(this.scroll);
-        
-    // },
+
    
-
-
-
     async created() {
         let data = await lunbo()
         console.log(data.data.data.banners);
-        this.banners = data.data.data.banners
+        this.banners = data.data.data.banners;
+
+
+         if (data) {
+            this.loadingFlag = false
+        } else {
+            this.loadingFlag = true
+
+        }
     },
     data() {
         return {
-            banners:[]
+            banners:[],
+            loadingFlag:true
         }
     },
 
@@ -213,7 +215,7 @@ export default {
 .tab-content ul li{
     padding: .3rem .25rem .15rem .25rem;
     border-top: 1px solid #ccc;
-    width: 100%;
+
 
 }
 .tab-content ul li .find-txt{
@@ -223,7 +225,7 @@ export default {
     overflow: hidden;
     line-height: .5rem;
     font-size: .4rem;
-    font-weight: 900;
+    font-weight: 500;
     color: #333;
     text-overflow: ellipsis;
     margin-bottom: .2rem;

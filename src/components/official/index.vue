@@ -1,7 +1,8 @@
 <template>
 
         <div class="tab-content" >
-        <ul>
+        <Loading v-if="loadingFlag"/>
+        <ul v-if="!loadingFlag">
             <li v-for="(item,index) in banners" :key="index">
                 <div class="find-txt">
                     <h2>{{item.detail.title}}</h2>
@@ -35,10 +36,18 @@ export default {
         let data = await official()
         console.log(data.data);
         this.banners = data.data;
+
+        if (data) {
+            this.loadingFlag = false
+        } else {
+            this.loadingFlag = true
+
+        }
     },
     data() {
         return {
-            banners:[]
+            banners:[],
+            loadingFlag:true
         }
     },
 
@@ -50,7 +59,6 @@ export default {
 .tab-content ul li{
     padding: .3rem .25rem .15rem .25rem;
     border-top: 1px solid #ccc;
-    width: 100%;
 
 }
 .tab-content ul li .find-txt{
@@ -60,7 +68,7 @@ export default {
     overflow: hidden;
     line-height: .5rem;
     font-size: .4rem;
-    font-weight: 900;
+    font-weight: 500;
     color: #333;
     text-overflow: ellipsis;
     margin-bottom: .2rem;

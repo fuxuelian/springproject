@@ -1,43 +1,36 @@
 <template>
   <div>
-    <HeaderCom />
-    
-    <BScroll ref="bscroll">
-      <template>
-          <div class="main" ref="listBody">
-          <!-- <div class="loading"><i class="fa fa-spinner fa-pulse"></i></div> -->
+    <Header />
+    <div class="main" ref="listBody">
+      <BScroll ref="bscroll">
+        <template>
           <div>
-            <div class="loading"><i class="fa fa-spinner fa-pulse"></i></div>
-          <div class="search">
-            
-            <!-- 城市地址搜索 -->
-            <div class="search-top">
-              <a href="javascript:;">
-                深圳
-                <i class="iconfont icon-xjt"></i>
-              </a>
-              <input type="text" class="search-ipt" placeholder="搜索你想去的地方" />
-              <i class="iconfont icon-fangdajing"></i>
+            <div class="loading" v-if="loadingFlag"><i class="fa fa-spinner fa-pulse"></i></div>
+            <div class="search" >
+              <!-- 城市地址搜索 -->
+              <div class="search-top">
+                <a href="javascript:;">
+                  深圳
+                  <i class="iconfont icon-xjt"></i>
+                </a>
+                <input type="text" class="search-ipt" placeholder="搜索你想去的地方" />
+                <i class="iconfont icon-fangdajing"></i>
+              </div>
+            </div>
+            <!--热门目的地-->
+            <div class="hot-city">
+              <div class="hot-tab">
+                <Leftlist></Leftlist>
+                <!--左侧导航-->
+
+                <!--左侧导航第一级位置内容-->
+              </div>
             </div>
           </div>
-          <!--热门目的地-->
-          <div class="hot-city">
-            <div class="hot-tab">
-              <Leftlist></Leftlist>
-              <!--左侧导航-->
-
-              <!--左侧导航第一级位置内容-->
-              
-              </div>
-            
-          </div>
-        </div>
-        </div>
-    </template>
-    
-    </BScroll>
+        </template>
+      </BScroll>
+    </div>
   </div>
-
 </template>
 <script>
 import Leftlist from "components/leftList";
@@ -46,13 +39,10 @@ import BottomList from "components/bottomList";
 // import BScroll from "better-scroll";
 export default {
   name: "list",
-  created() {
-    // console.log(this.$refs.bscroll)
-  },
+
   data() {
     return {
-      loadingFlag:false,
-
+      loadingFlag:true
     };
   },
   components: {
@@ -60,31 +50,28 @@ export default {
     RightList,
     BottomList
   },
-  mounted() {
-    this.$refs.bscroll.scrollstart((flag)=>{
-      this.loadingFlag = flag
+  mounted(){
+    this.$refs.bscroll.handleScrollStart(() => {
+        this.loadingFlag = true
+    }),
+
+    this.$refs.bscroll.handleScrollEnd(() => {
+        this.loadingFlag = false
     })
-    this.$refs.bscroll.scrollEnd((flag)=>{
-      this.loadingFlag = flag
-
-    })
-
-
-    }
+  }
 };
 </script>
 <style  scoped>
-
-.loading{
+.loading {
   width: 100%;
-  height: .3rem;
+  height: 0.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
 }
-.loading>i{
-  font-size: .3rem;
+.loading > i {
+  font-size: 0.3rem;
 }
 .main {
   width: 100%;
@@ -96,14 +83,13 @@ export default {
   overflow-y: auto;
   padding-bottom: 2rem;
   
-  padding-top: .8rem;
+
 }
 
 /* 城市地址搜索 */
 .search {
   padding: 0.2rem;
   position: relative;
-  border-top: 1px solid #ccc;
   background-color: #fff;
 }
 .search-top {
@@ -144,9 +130,7 @@ export default {
 
 /* 左侧导航 */
 
-.hot-city{
+.hot-city {
   background-color: #f2f3f7;
 }
-
-
 </style>
