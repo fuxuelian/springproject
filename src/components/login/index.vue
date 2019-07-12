@@ -2,14 +2,15 @@
   <div>
     <div class="wrap login-bd">
       <div class="bd-color"></div>
-      <header class="header">
+      <!-- <header class="header">
         <span  class="jsback"  @click="prev">
           <i class="iconfont icon-xiangzuo" ></i>
         </span>
         <section class="ftr">
           <span>账号登录</span>
         </section>
-      </header>
+      </header> -->
+       <Header/>
       <article class="main m-cb">
         <section class="login-outer">
           <div class="login-img">

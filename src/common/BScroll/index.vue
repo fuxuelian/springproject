@@ -7,8 +7,7 @@
 import BScroll from "better-scroll"
 export default {
     name:"Bscroll",
-   mounted() {
-       console.log(this.$refs.wrapper)
+   mounted() { 
     this.scroll = new BScroll(this.$refs.wrapper, {
       probeType: 1,
       tap:true,

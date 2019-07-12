@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name:"headerCom",
+    name:"header",
     props:{
         title:{
             type:String,
