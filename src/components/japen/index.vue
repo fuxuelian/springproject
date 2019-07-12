@@ -9,8 +9,8 @@
 
         <!-- 内容 -->
         <div class="main"  ref="listBody">
-        <BScroll>
-            <template>
+        <!-- <BScroll> -->
+            <!-- <template> -->
                 
             <!-- 轮播图 -->
                 <div>
@@ -171,8 +171,8 @@
                     </div>
                 </div>
             
-            </template>
-        </BScroll>
+            <!-- </template> -->
+       
     </div>
     </div>
 </template>
