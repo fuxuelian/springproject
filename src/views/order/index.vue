@@ -59,7 +59,6 @@ export default {
    
     async created() {
         let data = await lunbo()
-        console.log(data.data.data.banners);
         this.banners = data.data.data.banners;
 
 
