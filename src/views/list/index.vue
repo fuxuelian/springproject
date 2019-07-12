@@ -1,52 +1,78 @@
 <template>
   <div>
-    <HeaderCom />
+    <Header />
+    <div class="main" ref="listBody">
+      <BScroll ref="bscroll">
+        <template>
+          <div>
+            <div class="loading" v-if="loadingFlag"><i class="fa fa-spinner fa-pulse"></i></div>
+            <div class="search" >
+              <!-- 城市地址搜索 -->
+              <div class="search-top">
+                <a href="javascript:;">
+                  深圳
+                  <i class="iconfont icon-xjt"></i>
+                </a>
+                <input type="text" class="search-ipt" placeholder="搜索你想去的地方" />
+                <i class="iconfont icon-fangdajing"></i>
+              </div>
+            </div>
+            <!--热门目的地-->
+            <div class="hot-city">
+              <div class="hot-tab">
+                <Leftlist></Leftlist>
+                <!--左侧导航-->
 
-    <div class="main">
-      <div class="search">
-        <!-- 城市地址搜索 -->
-        <div class="search-top">
-          <a href="javascript:;">
-            深圳
-            <i class="iconfont icon-xjt"></i>
-          </a>
-          <input type="text" class="search-ipt" placeholder="搜索你想去的地方" />
-          <i class="iconfont icon-fangdajing"></i>
-        </div>
-      </div>
-      <!--热门目的地-->
-      <div class="hot-city">
-        <div class="hot-tab">
-          <Leftlist></Leftlist>
-          <!--左侧导航-->
-
-          <!--左侧导航第一级位置内容-->
-          
+                <!--左侧导航第一级位置内容-->
+              </div>
+            </div>
           </div>
-        
-      </div>
+        </template>
+      </BScroll>
     </div>
   </div>
-
 </template>
 <script>
 import Leftlist from "components/leftList";
 import RightList from "components/rightList";
 import BottomList from "components/bottomList";
+// import BScroll from "better-scroll";
 export default {
   name: "list",
 
   data() {
-    return {};
+    return {
+      loadingFlag:true
+    };
   },
   components: {
     Leftlist,
     RightList,
     BottomList
+  },
+  mounted(){
+    this.$refs.bscroll.handleScrollStart(() => {
+        this.loadingFlag = true
+    }),
+
+    this.$refs.bscroll.handleScrollEnd(() => {
+        this.loadingFlag = false
+    })
   }
 };
 </script>
 <style  scoped>
+.loading {
+  width: 100%;
+  height: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.loading > i {
+  font-size: 0.3rem;
+}
 .main {
   width: 100%;
   height: 100%;
@@ -56,14 +82,14 @@ export default {
   bottom: 1rem;
   overflow-y: auto;
   padding-bottom: 2rem;
-  background-color: #f2f3f7;
+  
+
 }
 
 /* 城市地址搜索 */
 .search {
   padding: 0.2rem;
   position: relative;
-  border-top: 1px solid #ccc;
   background-color: #fff;
 }
 .search-top {
@@ -104,6 +130,7 @@ export default {
 
 /* 左侧导航 */
 
-
-
+.hot-city {
+  background-color: #f2f3f7;
+}
 </style>

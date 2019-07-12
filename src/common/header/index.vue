@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .header{
     width: 100%;
@@ -45,6 +45,7 @@ export default {
     text-align: center;
     background: #fff;
     z-index: 10;
+    border-bottom: 1px solid #dedede;
 }
 .header>h2{
     position: absolute;

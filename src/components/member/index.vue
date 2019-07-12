@@ -297,7 +297,7 @@
         </ul>
       </footer>
 
-      <!--footer  end  -->
+      
     </div>
  
  
@@ -342,16 +342,10 @@ export default {
      
     };
   },
-  // mounted(){
-  //   this.scroll=new BScroll(this.$refs.bscroll)
-  //   this.scroll.hasVerticalScroll=true
-  //   console.log(this.scroll)
-  // },
 
   components: {
     Header,
-    // BScroll
-    // MemberList
+
   }
 };
 </script>
@@ -374,19 +368,9 @@ font-size:.4rem;
   height: 100%;
   /* width:max-content; */
   overflow: auto;
-  /* position: relative;
-  top: 0;
-  left: 0; */
+
 }
-.wrap .main {
- 
-  /* overflow-y: auto; */
-  /* position: absolute;
-  top: 0.9rem;
-  left: 0;
-  bottom: 0; */
-  /* height: 100%; */
-}
+
 /* 主页开始 */
 
 .m-ctb {

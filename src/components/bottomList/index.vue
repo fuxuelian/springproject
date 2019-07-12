@@ -33,14 +33,14 @@ export default {
     name:"bottomList",
     async created() {
         let data = await destination()
-        console.log(data.data.positions[0].data.keywords);
+        
         
         this.keywords = data.data.positions[0].data.keywords;
 
-        // console.log(data.data.data.banners);
+        
         this.banners = data.data.data.banners;
 
-        console.log(this.banners)
+     
     },
     data() {
         return {

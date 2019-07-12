@@ -1,30 +1,6 @@
 <template>
     
         <div class="tab-inner">
-            
-        <!-- <ul class="ul-img">
-            <li>
-                <a href="javascript:;">
-                    <h3><span>大阪</span>OSAKA</h3>
-                    <img src="//media.china-sss.com/img/M00/00/0D/wKjFbFp6b12ACHsLAAJdxtx8hcM135.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <h3><span>大阪</span>OSAKA</h3>
-                    <img src="//media.china-sss.com/img/M00/00/0D/wKjFbFp6b12ACHsLAAJdxtx8hcM135.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <h3><span>大阪</span>OSAKA</h3>
-                    <img src="//media.china-sss.com/img/M00/00/0D/wKjFbFp6b12ACHsLAAJdxtx8hcM135.jpg" alt="">
-                </a>
-            </li>
-        </ul>
-        <h2>
-            <i class="iconfont icon-dianzan"></i>推荐目的地
-        </h2> -->
 
         </div>
 
@@ -40,7 +16,7 @@ export default {
     name:"rightList",
     async created() {
         let data = await destination()
-        console.log(data);
+        
         
         
     },

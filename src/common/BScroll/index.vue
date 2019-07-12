@@ -24,7 +24,14 @@ export default {
                     cb()
                 }
             })
-        }
+        },
+        handleScrollEnd(cb){
+            this.scroll.on("scrollEnd",()=>{
+                setTimeout(()=>{
+                cb();
+            },1000)
+       })
+     },
     }
 }
 </script>

@@ -7,6 +7,8 @@ import list from "./list";
 import mine from "./mine";
 import order from "./order";
 import telme from "./telme";
+import ticket from "./ticket";
+import japen from "./japen";
 import member from "./member";
 import login from "./login";
 import collect from "./collect";
@@ -15,6 +17,7 @@ import details from "./details";
 import night from "./night";
 import orderDetails from "./order-details";
 import live from "./live";
+import xiangqing from "./xiangqing"
 
 export default new Router({
     routes:[
@@ -26,7 +29,9 @@ export default new Router({
       list,
       mine,
       order,
-      telme ,
+      ticket,
+      japen,
+      telme,
       member,
       login,
       collect,
@@ -34,7 +39,8 @@ export default new Router({
       details,
       orderDetails,
       night,
-      live
+      live,
+      xiangqing
     ]
 })
 

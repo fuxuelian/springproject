@@ -1,173 +1,120 @@
 <template>
     
 <div>
+    <Header title="机票"/>
+    <router-link to="" ></router-link>
     <!-- 内容 -->
     <div class="main">
-
-        <!-- banner图 -->
-        <div class="banner">
-            <img src="//media.china-sss.com/img/M00/04/10/wKjFbVt856uABd68AAEGRkhPibo265.png" alt="">
-        </div>
-        <div class="main-top">
-            <div>
-                <!-- 切换 -->
-                <div class="main-tab">
-                    <ul>
-                        <li class="tab-one"><a href="javascript:;">单程</a></li>
-                        <li><a href="javascript:;">往返</a></li>
-                    </ul>
-                </div>
-                <!-- 城市 -->
-                <div class="main-city">
-                    <div class="tocity">
-                        <span>上海</span>
-                        <i class="iconfont icon-feiji"></i>
-                        <span>广州</span>
+    <BScroll>
+        <template>
+            
+                <div class="scrollTop">
+                    <!-- banner图 -->
+                    <div class="banner">
+                        <mt-swipe :auto="2000">
+                            <mt-swipe-item v-for="(item,index) in banners" :key="index">
+                                <img :src="item.imgurl"/>
+                            </mt-swipe-item>
+                        </mt-swipe>
                     </div>
-                    <div class="main-month">
-                        <span>07月12日 <em>周五</em></span>
-                        <span class="main-heid">07月05日 <em>周一</em></span>
+                    <div class="main-top">
+                        <div>
+                            <!-- 切换 -->
+                            <div class="main-tab">
+                                <ul>
+                                    <li class="tab-one"><a href="javascript:;">单程</a></li>
+                                    <li><a href="javascript:;">往返</a></li>
+                                </ul>
+                            </div>
+                            <!-- 城市 -->
+                            <div class="main-city">
+                                <div class="tocity">
+                                    <span>上海</span>
+                                    <i class="iconfont icon-feiji"></i>
+                                    <span>广州</span>
+                                </div>
+                                <div class="main-month">
+                                    <span>07月12日 <em>周五</em></span>
+                                    <span class="main-heid">07月05日 <em>周一</em></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 搜索 -->
+                        <div class="main-btn">
+                            <router-link to="/xiangqing" tag="p">搜索</router-link>
+                        </div>
+                        <div class="main-new">
+                            <div class="new-outer">
+                                <span>春航新加坡航班航站楼变更通知</span>
+                                <span class="new-heid">关于登机口对手提行李检查通知</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 出行玩乐 -->
+                    <div class="main-box">
+                        <div class="main-title">
+                            <h2>出行玩乐随心搭</h2>
+                        </div>
+                        <div class="box-tab">
+                            <ul>
+                                <li v-for="(item,index) in positions" :key="index" >{{item.name}}</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 目的地导航切换 -->
+                    <div class="main-wrap">
+                        <div class="wrap-tab">
+                            <ul>
+                                <li class="wrap-color">自由行</li>
+                                <li>跟团游</li>
+                            </ul>
+                        </div>
+                        <!-- 目的地 -->
+                        <div class="wrap-pic">
+                            <TicketpicOne/>
+
+                            <TicketpicTwo/>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- 搜索 -->
-            <div class="main-btn">
-                <a href="javascript:;">搜索</a>
-            </div>
-            <div class="main-new">
-                <div class="new-outer">
-                    <span>春航新加坡航班航站楼变更通知</span>
-                    <span class="new-heid">关于登机口对手提行李检查通知</span>
-                </div>
-            </div>
-        </div>
-        <!-- 出行玩乐 -->
-        <div class="main-box">
-            <div class="main-title">
-                <h2>出行玩乐随心搭</h2>
-            </div>
-            <div class="box-tab">
-                <ul>
-                    <li><a href="javascript:;">门票/卡券</a></li>
-                    <li><a href="javascript:;">机场接送</a></li>
-                    <li class="box-color"><a href="javascript:;">一日游</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 目的地导航切换 -->
-        <div class="main-wrap">
-            <div class="wrap-tab">
-                <ul>
-                    <li class="wrap-color">自由行</li>
-                    <li>跟团游</li>
-                </ul>
-            </div>
-            <!-- 目的地 -->
-            <div class="wrap-pic">
-                <div class="wrap-free">
-                    <ul>
-                        <li>
-                            <div class="wrap-img">
-                                <i>自由行</i>
-                                <img src="http://media.china-sss.com/pics/gallery/201701/94d78bbb-3bb2-4c71-9ac5-a665755c9d78_201701051004_500_350.jpg" alt="">
-                            </div>
-                            <div class="wrap-txt">
-                                <h4>【暑期预售】大阪5日4晚自由行●宿4晚温泉酒店（入住免费泡汤 +近地铁+早去晚回航班+2站抵达心斋桥）</h4>
-                                <p>
-                                    <span>￥<em>3099</em>&nbsp;起</span>
-                                    <span class="txt-span">上海出发</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wrap-img">
-                                <i>自由行</i>
-                                <img src="http://media.china-sss.com/pics/gallery/201701/94d78bbb-3bb2-4c71-9ac5-a665755c9d78_201701051004_500_350.jpg" alt="">
-                            </div>
-                            <div class="wrap-txt">
-                                <h4>【暑期预售】大阪5日4晚自由行●宿4晚温泉酒店（入住免费泡汤 +近地铁+早去晚回航班+2站抵达心斋桥）</h4>
-                                <p>
-                                    <span>￥<em>3099</em>&nbsp;起</span>
-                                    <span class="txt-span">上海出发</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wrap-img">
-                                <i>自由行</i>
-                                <img src="http://media.china-sss.com/pics/gallery/201701/94d78bbb-3bb2-4c71-9ac5-a665755c9d78_201701051004_500_350.jpg" alt="">
-                            </div>
-                            <div class="wrap-txt">
-                                <h4>【暑期预售】大阪5日4晚自由行●宿4晚温泉酒店（入住免费泡汤 +近地铁+早去晚回航班+2站抵达心斋桥）</h4>
-                                <p>
-                                    <span>￥<em>3099</em>&nbsp;起</span>
-                                    <span class="txt-span">上海出发</span>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 跟团游 -->
-                <div class="wrap-free">
-                    <ul>
-                        <li>
-                            <div class="wrap-img">
-                                <i>跟团游</i>
-                                <img src="http://media.china-sss.com/pics/gallery/201701/94d78bbb-3bb2-4c71-9ac5-a665755c9d78_201701051004_500_350.jpg" alt="">
-                            </div>
-                            <div class="wrap-txt">
-                                <h4>【暑期预售】大阪5日4晚自由行●宿4晚温泉酒店（入住免费泡汤 +近地铁+早去晚回航班+2站抵达心斋桥）</h4>
-                                <p>
-                                    <span>￥<em>3099</em>&nbsp;起</span>
-                                    <span class="txt-span">上海出发</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wrap-img">
-                                <i>跟团游</i>
-                                <img src="http://media.china-sss.com/pics/gallery/201701/94d78bbb-3bb2-4c71-9ac5-a665755c9d78_201701051004_500_350.jpg" alt="">
-                            </div>
-                            <div class="wrap-txt">
-                                <h4>【暑期预售】大阪5日4晚自由行●宿4晚温泉酒店（入住免费泡汤 +近地铁+早去晚回航班+2站抵达心斋桥）</h4>
-                                <p>
-                                    <span>￥<em>3099</em>&nbsp;起</span>
-                                    <span class="txt-span">上海出发</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wrap-img">
-                                <i>跟团游</i>
-                                <img src="http://media.china-sss.com/pics/gallery/201701/94d78bbb-3bb2-4c71-9ac5-a665755c9d78_201701051004_500_350.jpg" alt="">
-                            </div>
-                            <div class="wrap-txt">
-                                <h4>【暑期预售】大阪5日4晚自由行●宿4晚温泉酒店（入住免费泡汤 +近地铁+早去晚回航班+2站抵达心斋桥）</h4>
-                                <p>
-                                    <span>￥<em>3099</em>&nbsp;起</span>
-                                    <span class="txt-span">上海出发</span>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+            
+        </template>
+    </BScroll>
 </div>
-
-
-
+</div>
 </template>
 
 
 <script>
+import {ticket} from "api/destination";
+import {ticketTrip} from "api/destination";
+import { Swipe, SwipeItem } from 'mint-ui';
+import TicketpicOne from "components/ticketpicOne";
+import TicketpicTwo from "components/ticketpicTwo";
 export default {
-    
+    name:"tickei",
+    async created() {
+        let data = await ticket()
+       
+        this.banners = data.data.data.banners;
+
+        let datas = await ticketTrip()
+        
+        this.positions = datas.data.positions
+        
+    },
+    components:{
+        TicketpicOne,
+        TicketpicTwo
+    },
+    data() {
+        return {
+            banners:[],
+            positions:[]
+        }
+    },
 
 
 }
@@ -175,6 +122,12 @@ export default {
 
 
 <style scoped>
+
+
+.banner{
+    width: 100%;
+    height: 2.6rem;
+}
 
 .main{
     width: 100%;
@@ -226,7 +179,7 @@ export default {
     overflow: hidden;
     padding: .1rem .3rem .3rem .3rem;
     padding-bottom: .3rem;
-
+    background-color: #fff;
 }
 .main-city .tocity{
     line-height: 1rem;
@@ -268,8 +221,9 @@ export default {
 .main-btn{
     padding: 0 .3rem;
     padding-bottom: .3rem;
+    background-color: #fff;
 }
-.main-btn a{
+.main-btn p{
     display: block;
     line-height: .8rem;
     text-align: center;
@@ -281,6 +235,7 @@ export default {
 .main-new{
     border-top: 1px solid #f5f5f5;
     padding: 0 .3rem .1rem .3rem;
+    background-color: #fff;
 }
 .main-new .new-outer {
     display: inline-block;
@@ -300,6 +255,7 @@ export default {
 
 .main-box{
     border-bottom: .2rem solid #ededed;
+    background-color: #fff;
 }
 .main-box .main-title{
     padding: .2rem .3rem 0 .3rem;
@@ -331,6 +287,9 @@ export default {
 }
 
 /* 目的地导航切换 */
+.main-wrap{
+    background-color: #fff;
+}
 .main-wrap .wrap-tab ul{
     display: flex;
     justify-content: space-around;

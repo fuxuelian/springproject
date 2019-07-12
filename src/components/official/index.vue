@@ -1,9 +1,9 @@
 <template>
-    
-    <div class="tab-content">   
+
+        <div class="tab-content" >
         <Loading v-if="loadingFlag"/>
         <ul v-if="!loadingFlag">
-            <li v-for="(item,index) in datas" :key="index">
+            <li v-for="(item,index) in banners" :key="index">
                 <div class="find-txt">
                     <h2>{{item.detail.title}}</h2>
                     <img :src="item.pictures[0].url" alt="">
@@ -24,18 +24,18 @@
                 </div>
             </li>
         </ul>
-    </div>
+        </div>
+
 </template>
 
 <script>
-import {remark} from "api/destination";
+import {official} from "api/destination";
 export default {
-    name:"remark",
+    name:"official",
     async created() {
-        let data = await remark()
-       
-        this.datas = data.data;
-
+        let data = await official()
+        
+        this.banners = data.data;
 
         if (data) {
             this.loadingFlag = false
@@ -46,7 +46,7 @@ export default {
     },
     data() {
         return {
-            datas:[],
+            banners:[],
             loadingFlag:true
         }
     },
@@ -59,7 +59,6 @@ export default {
 .tab-content ul li{
     padding: .3rem .25rem .15rem .25rem;
     border-top: 1px solid #ccc;
-    
 
 }
 .tab-content ul li .find-txt{

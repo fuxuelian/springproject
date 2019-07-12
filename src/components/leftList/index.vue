@@ -84,10 +84,10 @@ export default {
     overflow: hidden;
     /* z-index: 10; */
 }
-.hot-city .hot-tab>ul>.router-link-active{
+/* .hot-city .hot-tab>ul>.router-link-active{
     background-color: #f6f7fb;
     
-}
+} */
 .hot-city .hot-tab>ul>li{
     
     height: 1rem;

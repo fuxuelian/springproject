@@ -25,18 +25,18 @@
                     <img src="https://media.china-sss.com/img/M00/04/36/wKjFbVvyLE-ACTr7AAAMXhfeqlY352.png" alt="">
                     <p>出境游</p>
                 </li>
-                <li>
+                <router-link to="/ticket" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/45/wKjFbVwm60WANVOWAAAY6j400vE369.png" alt="">
                     <p>飞机</p>
-                </li>
+                </router-link>
                 <li>
                     <img src="https://media.china-sss.com/img/M00/04/52/wKjFbVxK9FSAMbMoAAAsmkBE90c687.png" alt="">
                     <p>出境游</p>
                 </li>
-                <li>
+                <router-link to="/japen" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/46/wKjFbFwnSQWAQ94tAAAT5ZV3Cbc926.png" alt="">
-                    <p>出境游</p>
-                </li>
+                    <p>日本游</p>
+                </router-link>
                 <li>
                     <img src="https://media.china-sss.com/img/M00/04/0F/wKjFbFt7y0GAWRUsAAASvo84-LY721.png" alt="">
                     <p>出境游</p>
