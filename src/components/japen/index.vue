@@ -14,13 +14,13 @@
                 
             <!-- 轮播图 -->
                 <div>
-                    <banner class="banner">
+                    <div class="banner">
                         <mt-swipe :auto="2000">
                             <mt-swipe-item v-for="(item,index) in banners" :key="index">
                                 <img :src="item.imgurl"/>
                             </mt-swipe-item>
                         </mt-swipe>
-                    </banner>
+                    </div>
                     <div class="search">
                         <!-- 城市地址搜索 -->
                         <div class="search-top">
@@ -180,7 +180,7 @@
 <script>
 import {ticket} from "api/destination";
 import Freedom from "components/freedom";
-import BScroll from "better-scroll";
+// import BScroll from "better-scroll";
 export default {
     name:"japen",
     async created() {
@@ -204,8 +204,6 @@ export default {
     },
     mounted() {
 
-        this.scroll = new BScroll(this.$refs.orderBody);
-        console.log(this.scroll);
     }
 
 }
