@@ -147,7 +147,7 @@ export default {
   top: 2.2rem;
   background: #ffffff;
   box-shadow: 0 3px #e4e2e2;
-  width: 6.5rem;
+  width: 90%;
   height: 0.82rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -166,7 +166,7 @@ export default {
 .ipt {
   float: left;
   height: 0.82rem;
-  width: 3.6rem;
+  width: 60%;
   border: 0;
   border-radius: 0 0.03rem 0.03rem 0;
   padding-left: 1rem;
