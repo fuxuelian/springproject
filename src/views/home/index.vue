@@ -13,38 +13,38 @@
                     <img src="https://media.china-sss.com/img/M00/04/36/wKjFbFvyLD-AObSLAAATqap666k706.png" alt="">
                     <p>出境游</p>
                 </router-link>
-                <li>
+               <router-link to="/details" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/36/wKjFbFvyLD-ASRIrAAARE0N2Yh0778.png" alt="">
                     <p>出境游</p>
-                </li>
-                <li>
+               </router-link>
+                <router-link to="/details" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/36/wKjFbVvyLD-AKwRpAAAOCp8L3l0599.png" alt="">
                     <p>出境游</p>
-                </li>
-                <li>
+               </router-link>
+                 <router-link to="/details" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/36/wKjFbVvyLE-ACTr7AAAMXhfeqlY352.png" alt="">
                     <p>出境游</p>
-                </li>
+               </router-link>
                 <router-link to="/ticket" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/45/wKjFbVwm60WANVOWAAAY6j400vE369.png" alt="">
                     <p>飞机</p>
                 </router-link>
-                <li>
+                 <router-link to="/details" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/52/wKjFbVxK9FSAMbMoAAAsmkBE90c687.png" alt="">
                     <p>出境游</p>
-                </li>
+                 </router-link>
                 <router-link to="/japen" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/46/wKjFbFwnSQWAQ94tAAAT5ZV3Cbc926.png" alt="">
                     <p>日本游</p>
                 </router-link>
-                <li>
+                  <router-link to="/details" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/0F/wKjFbFt7y0GAWRUsAAASvo84-LY721.png" alt="">
                     <p>出境游</p>
-                </li>
-                <li>
+               </router-link>
+                 <router-link to="/details" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/0F/wKjFbFt7y0GAWRUsAAASvo84-LY721.png" alt="">
                     <p>出境游</p>
-                </li>
+                </router-link>
                 <router-link to="/live" tag="li">
                     <img src="https://media.china-sss.com/img/M00/04/42/wKjFbFwYkQiADtkmAAAVf4SVPUs647.png" alt="">
                     <p>生活</p>
@@ -143,7 +143,7 @@ export default {
 .ipt-box {
   position: absolute;
   padding: 0 0.3rem;
-  left: 0.6rem;
+  left: 0.4rem;
   top: 2.2rem;
   background: #ffffff;
   box-shadow: 0 3px #e4e2e2;

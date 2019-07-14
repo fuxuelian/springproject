@@ -324,7 +324,7 @@ data(){
 }
  .vip-super{
    
-   margin-right:.5rem;
+   margin-right:.3rem;
 }
 .ftr{
     color:#bfa26a;

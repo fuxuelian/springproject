@@ -3,7 +3,7 @@
         <div id="header">
             <span @click="hanndleBack()"><i class="iconfont icon-zuojiantou"></i></span>
             <h2>产品详情</h2>
-            <span><i class="iconfont icon-shouye2"></i></span>
+            <router-link to="/home" tag="span"><i class="iconfont icon-shouye2"></i></router-link >
             <span><i class="iconfont icon-fenxiang-copy"></i></span>
         </div>
         <div id="banner">

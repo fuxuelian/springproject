@@ -47,10 +47,10 @@ export default {
     color: #999;
     overflow: hidden;
 }
-.wrap-pic .wrap-free>ul>li:nth-child(odd){
+.wrap-pic .wrap-free>ul>li{
     display: block;
     float: left;
-    width: 48%;
+    width: 46%;
     margin-right: 4%;
     margin-bottom: .2rem;
     position: relative;

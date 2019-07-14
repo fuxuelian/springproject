@@ -308,6 +308,13 @@ export default {
     height: .8rem;
     border-bottom: .04rem solid #00be88;
 }
+.wrap-tab{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 10;
+}
 
 /* 目的地 */
 .wrap-pic{
@@ -318,10 +325,10 @@ export default {
     color: #999;
     overflow: hidden;
 }
-.wrap-pic .wrap-free>ul>li:nth-child(odd){
+.wrap-pic .wrap-free>ul>li{
     display: block;
     float: left;
-    width: 48%;
+    width: 46%;
     margin-right: 4%;
     margin-bottom: .2rem;
     position: relative;

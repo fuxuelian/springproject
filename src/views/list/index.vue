@@ -42,7 +42,7 @@ export default {
 
   data() {
     return {
-      loadingFlag:true
+      loadingFlag:false
     };
   },
   components: {
